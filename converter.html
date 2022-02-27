@@ -42,9 +42,24 @@
                         <option value="temperature">Temperature</option>
                     </select>
                 </div>
-                <div id="value-box">value</div>
-                <div id="actions-box">actions</div>
-                <div id="answer-box">answer</div>
+                <div id="value-box">
+                    <input id="value-base" type="text">
+                    <select name="metric-one" id="metric-one">
+                        <option value="metric-one"></option>
+                    </select>
+                </div>
+                <div id="actions-box">
+                    <button id="swap" class="button"><i class="fa-solid fa-arrows-rotate"></i></button>
+                    <p class="button-text">Swap</p>
+                    <button id="clear" class="button"><i class="fa-solid fa-eraser"></i></button>
+                    <p class="button-text">Clear</p>
+                </div>
+                <div id="answer-box">
+                    <input id="value-result" type="text" disabled>
+                    <select name="metric-two" id="metric-two">
+                        <option value="metric-two"></option>
+                    </select>
+                </div>
             </div>
         </div>
     </section>
