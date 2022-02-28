@@ -31,13 +31,24 @@ timerCountdown.innerHTML = `Timer: ${timerSeconds}`;
 let timerDecres = setInterval (()=>{
     timerSeconds--;
     timerCountdown.innerHTML = `Timer: ${timerSeconds}`;
-    if (timerSeconds <= 0 || timerSeconds < 1) {
+    if (timerSeconds <= 0 || timerSeconds < 0) {
         clearInterval(timerDecres)
         // call new question
         // add incorrect answer
         // start timer again         
     }
 }, 1000);
+}
+
+// Create the new question and the answers
+function newQuestion() {
+    let questionNumb = 01;
+    let questionCounter = document.getElementById('question-counter');
+    questionCounter.innerHTML = `Question ${questionNumb}`;
+
+    let questionDescription = document.getElementById('question-diplay');
+
+    let answersOptions
 }
 
 /**
@@ -56,9 +67,10 @@ function startRestart() {
 
     // Start the timer
     timerStart();
-    // Create a question
-    
-    // Create the anwers
+
+    // Create a question and aswers
+    newQuestion();
+
 }
 
 /**
