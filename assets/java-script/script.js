@@ -200,13 +200,42 @@ let timerDecres = setInterval (()=>{
 
 // Create the new question and the answers
 function newQuestion() {
+    // random number to the question
+    let randomNumb = Math.floor(Math.random() * 100)
+
+    // define the category and metrics to the question
+    let categories = ['speed', 'temperature', 'time', 'scale', 'weight'];
+    let randomCategory = categories[Math.floor(Math.random() * categories.length)];
+    randomCategory;
+
+    if (randomCategory === 'speed') {
+        let randomMetric = speed[Math.floor(Math.random() * speed.length)];
+        randomMetric;
+    } else if (randomCategory === 'temperature') {
+        let randomMetric = temperature[Math.floor(Math.random() * temperature.length)];
+        randomMetric;
+    } else if (randomCategory === 'time') {
+        let randomMetric = time[Math.floor(Math.random() * time.length)];
+        randomMetric; 
+    } else if (randomCategory === 'scale') {
+        let randomMetric = scale[Math.floor(Math.random() * scale.length)];
+    randomMetric;
+    } else {
+        let randomMetric = weight[Math.floor(Math.random() * weight.length)];
+        randomMetric;
+    }
+
+    // Question number counter
     let questionNumb = 01;
     let questionCounter = document.getElementById('question-counter');
-    questionCounter.innerHTML = `Question ${questionNumb}`;
+    questionCounter.innerHTML = `Question ${questionNumb} - Category ${randomCategory}`;
 
     let questionDescription = document.getElementById('question-diplay');
+    questionDescription.innerHTML = `${randomNumb} ${randomMetric} corresponds to how many ${randomMetric2}?`;
 
     let answersOptions
+
+
 }
 
 /**
