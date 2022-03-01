@@ -1,7 +1,9 @@
 // Metrics database
 let inputVal = 0;
 
-let velocity = ['Miles per hour', 'KM per hour'];
+let categories = ['speed', 'temperature', 'time', 'scale', 'weight'];
+
+let speed = ['Miles per hour', 'KM per hour'];
 let milesToKm = inputVal * 1.609;
 let kmToMiles = inputVal / 1.609;
 
@@ -68,37 +70,91 @@ let yearsToWeeks = inputVal * 52.143;
 let yearsToMonths = inputVal * 12;
 
 let scale = ['Centimetres', 'Meters', 'Kilometers', 'Miles', 'Inches', 'Feets', 'Yards'];
-// Base centimetres
-let centimetresToMeters = inputVal / 100;
-let centimetresToKilometers = inputVal / 100000;
-let centimetresToMiles = inputVal / 160934;
-let centimetresToInches = inputVal / 2.54;
-let centimetresToFeets = inputVal / 30.48;
-let centimetresToYards = inputVal / 91.44;
+// Base centimeters
+let centimetersToMeters = inputVal / 100;
+let centimetersToKilometers = inputVal / 100000;
+let centimetersToMiles = inputVal / 160934;
+let centimetersToInches = inputVal / 2.54;
+let centimetersToFeets = inputVal / 30.48;
+let centimetersToYards = inputVal / 91.44;
 // Base meters
-
+let metersToCentimeters = inputVal * 100;
+let metersToKilometers = inputVal / 1000;
+let metersToMiles = inputVal / 1609;
+let metersToInches = inputVal * 39.37;
+let metersToFeets = inputVal * 3.281;
+let metersToYards = inputVal * 1.094;
 // Base kilometers
-
+let kilometersToCentimeters = inputVal * 100000;
+let kilometersToMeters = inputVal * 1000;
+let kilometersToMiles = inputVal / 1.609;
+let kilometersToInches = inputVal * 39370;
+let kilometersToFeets = inputVal * 3281;
+let kilometersToYards = inputVal * 1094;
 // Base miles
-
+let milesToCentimeters = inputVal * 160934;
+let milesToMeters = inputVal * 1609;
+let milesToKilometers = inputVal * 1.609;
+let milesToInches = inputVal * 63360;
+let milesToFeets = inputVal * 5280;
+let milesToYards = inputVal * 1760;
 // Base inches
-
+let inchesToCentimeters = inputVal * 2.54;
+let inchesToMeters = inputVal / 39.37;
+let inchesToKilometers = inputVal / 39370;
+let inchesToFeets = inputVal / 12;
+let inchesToYards = inputVal / 36;
 // Base feets
-
+let feetsToCentimeters = inputVal * 30.48;
+let feetsToMeters =  inputVal / 3.281;
+let feetsToKilometers = inputVal / 3281;
+let feetsToInches = inputVal * 12;
+let feetsToYards = inputVal / 3;
 // Base yards
+let yardsToCentimeters = inputVal * 91.44;
+let yardsToMeters = inputVal / 1.094
+let yardsToKilometers = inputVal / 1094;
+let yardsToMiles = inputVal / 1760;
+let yardsToInches = inputVal * 36;
+let yardsToFeets = inputVal * 3;
 
 let weight = ['Tonne', 'Kilos', 'Grams', 'Milligrams', 'Ounce', 'Pounds'];
 // Base tonne
-
+let tonneToKilos = inputVal * 1000;
+let tonneToGrams = (inputVal * 1000) * 1000;
+let tonneToMilligrams = (inputVal * 1000) * 1000000;
+let tonneToOunce = inputVal * 35274;
+let tonneToPounds = inputVal * 2205;
 // Base kilos
-
+let kilosToTonne = inputVal / 1000;
+let kilosToGrams = inputVal * 1000;
+let kilosToMilligrams = (inputVal * 1000) * 1000;
+let kilosToOunce = inputVal * 35.275;
+let kilosToPounds = inputVal * 2.205;
 // Base grams
-
-// Base miligrams
-
+let gramsToTonne = (inputVal / 1000) / 1000;
+let gramsToKilos = inputVal / 1000
+let gramsToMilligrams = inputVal * 1000;
+let gramsToOunce = inputVal / 28.35;
+let gramsToPounds = inputVal / 454;
+// Base milligrams
+let milligramsToTonne = (inputVal / 1000) / 1000000;
+let milligramsToKilos = (inputVal / 1000) / 1000;
+let milligramsToGrams = inputVal / 1000;
+let milligramsToOunce = inputVal / 28350;
+let milligramsToPounds = inputVal / 453592;
 // Base ounce
-
+let ounceToTonne = inputVal / 35274;
+let ounceToKilos = inputVal / 35.274;
+let ounceToGrams = inputVal * 28.35;
+let ounceToMilligrams = inputVal * 28350;
+let ounceToPounds = inputVal / 16;
 // Base pounds
+let poundsToTonne = inputVal / 2205;
+let poundsToKilos = inputVal / 2.205;
+let poundsToGrams = inputVal * 454;
+let poundsToMilligrams = inputVal * 453592;
+let poundsToOunce = inputVal * 16;
 
 // converter.html functions
 
