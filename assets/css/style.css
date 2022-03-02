@@ -1,0 +1,67 @@
+/* Theme and nav-bar style - all pages */
+#theme {
+    display: flex;
+    justify-content: center;
+}
+
+/* Footer style - all pages */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+#social-links-container ul {
+    display: flex;
+    flex-direction: row;
+}
+
+/* index.html style */
+#selection {
+    display: flex;
+    justify-content: center;
+}
+
+#selection-container {
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: yellow;
+}
+
+/* converter.html style */
+
+#converter {
+    display: flex;
+    justify-content: center;
+}
+
+#converter-container {
+    background-color: greenyellow;
+}
+
+#converter-container h2 {
+    display: flex;
+    justify-content: center;
+}
+
+/* quiz-game.html style */
+
+#quiz-game {
+    display: flex;
+    justify-content: center;
+}
+
+#quiz-game-container {
+    background-color: aquamarine;
+}
+
+#quiz-game-container h2 {
+    display: flex;
+    justify-content: center;
+}
