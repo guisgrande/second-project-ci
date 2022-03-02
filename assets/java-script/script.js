@@ -2,21 +2,35 @@
 let inputVal = 0;
 
 let categories = ['speed', 'temperature', 'time', 'scale', 'weight'];
-
 let speed = ['Miles per hour', 'KM per hour'];
-let milesToKm = inputVal * 1.609;
-let kmToMiles = inputVal / 1.609;
-
 let temperature = ['Celsius', 'Fahrenheit', 'Kelvin'];
-// Base celsius
-let celsiusToFahreneit = (inputVal * 1.8) + 32;
-let celsiusToKelvin = inputVal + 273.15;
-// Base fahreinheit
-let fahrenheitToCelsius = (inputVal - 32) * 0.55;
-let fahrenheitToKelvin = (inputVal - 32) * 0.55 + 273.15;
-// Base kelvin
-let kelvinToCelsius = inputVal - 273.15;
-let kelvinToFahrenheit = (inputVal - 273.15) * 1.8 + 32;
+
+function speedConvert() {
+// Speed base convertion
+if (metric1 === 'Miles per hour' && metric2 === 'KM per hour') {
+    let milesToKm = inputVal * 1.609;
+} else {
+    let kmToMiles = inputVal / 1.609;
+};
+
+};
+
+function temperatureConvert() {
+// Temperature base convertion
+if (metric1 === 'Celsius' && metric2 === 'Fahrenheit') {
+    let celsiusToFahreneit = (inputVal * 1.8) + 32;
+} else if (metric1 === 'Celsius' && metric2 ==='Kelvin') {
+    let celsiusToKelvin = inputVal + 273.15;
+} else if (metric1 === 'Fahrenheit' && metric2 === 'Celsius') {
+    let fahrenheitToCelsius = (inputVal - 32) * 0.55;
+} else if (metric1 === 'Fahrenheit' && metric2 === 'Kelvin') {
+    let fahrenheitToKelvin = (inputVal - 32) * 0.55 + 273.15;
+} else if (metric1 === 'Kelvin' && metric2 === 'Celsius') {
+    let kelvinToCelsius = inputVal - 273.15;
+} else {
+    let kelvinToFahrenheit = (inputVal - 273.15) * 1.8 + 32;
+};
+};
 
 let time = ['Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months', 'Years'];
 // Base seconds
@@ -200,10 +214,10 @@ let timerDecres = setInterval (()=>{
 
 // Create the new question and the answers
 function newQuestion() {
-    // random number to the question
+    // Random number to the question
     let randomNumb = Math.floor(Math.random() * 100)
 
-    // define the category and metrics to the question
+    // Random category to the question
     let categories = ['speed', 'temperature', 'time', 'scale', 'weight'];
     let randomCategory = categories[Math.floor(Math.random() * categories.length)];
     randomCategory;
