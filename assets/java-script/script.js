@@ -273,8 +273,26 @@ function newQuestion() {
     let questionDescription = document.getElementById('question-diplay');
     questionDescription.innerHTML = `${randomNumb} ${randomMetric1} corresponds to how many ${randomMetric2}?`;
 
-    let answersOptions
+    // Quesiton generator
+    inputVal = randomNumb;
+    metric1 = randomMetric1;
+    metric2 = randomMetric2;
 
+    if (randomCategory === 'speed') {
+        speedConvert();
+    } else if (randomCategory === 'temperature') {
+        temperatureConvert();
+    } else if (randomCategory === 'time') {
+        timeConvert();
+    } else if (randomCategory === 'scale') {
+        scaleConvert();
+    } else {
+        weightConvert();
+    }
+
+    let correctAnswer = ;
+    let wrongAnswer1 = correctAnswer + Math.floor(Math.random() * 1000);
+    let wrongAnswer2 = correctAnswer + Math.floor(Math.random() * 1000);
 
 }
 
