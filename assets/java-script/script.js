@@ -208,21 +208,47 @@ function newQuestion() {
     let randomCategory = categories[Math.floor(Math.random() * categories.length)];
     randomCategory;
 
+    // Select the first metric using Math.random, filter to exclude the first metric, then Math.random again to select the scond metric.
     if (randomCategory === 'speed') {
-        let randomMetric = speed[Math.floor(Math.random() * speed.length)];
-        randomMetric;
+        let randomMetric1 = speed[Math.floor(Math.random() * speed.length)];
+        randomMetric1;
+        let speedFilter = speed.filter(metric => {
+            return metric !== randomMetric1;
+        });
+        let randomMetric2 = speedFilter[Math.floor(Math.random() * speedFilter.length)];
+        randomMetric2;
     } else if (randomCategory === 'temperature') {
-        let randomMetric = temperature[Math.floor(Math.random() * temperature.length)];
-        randomMetric;
+        let randomMetric1 = temperature[Math.floor(Math.random() * temperature.length)];
+        randomMetric1;
+        let temperatureFilter = temperature.filter(metric => {
+            return metric !== randomMetric1;
+        });
+        let randomMetric2 = temperatureFilter[Math.floor(Math.random() * temperatureFilter.length)];
+        randomMetric2;
     } else if (randomCategory === 'time') {
-        let randomMetric = time[Math.floor(Math.random() * time.length)];
-        randomMetric; 
+        let randomMetric1 = time[Math.floor(Math.random() * time.length)];
+        randomMetric1;
+        let timeFilter = time.filter(metric => {
+            return metric !== randomMetric1;
+        });
+        let randomMetric2 = timeFilter[Math.floor(Math.random() * timeFilter.length)];
+        randomMetric2;
     } else if (randomCategory === 'scale') {
-        let randomMetric = scale[Math.floor(Math.random() * scale.length)];
-    randomMetric;
+        let randomMetric1 = scale[Math.floor(Math.random() * scale.length)];
+    randomMetric1;
+        let scaleFilter = scale.filter(metric => {
+            return metric !== randomMetric1;
+        });
+        let randomMetric2 = scaleFilter[Math.floor(Math.random() * scaleFilter.length)];
+        randomMetric2;
     } else {
-        let randomMetric = weight[Math.floor(Math.random() * weight.length)];
-        randomMetric;
+        let randomMetric1 = weight[Math.floor(Math.random() * weight.length)];
+        randomMetric1;
+        let weightFilter = weight.filter(metric => {
+            return metric !== randomMetric1;
+        });
+        let randomMetric2 = weightFilter[Math.floor(Math.random() * weightFilter.length)];
+        randomMetric2;
     }
 
     // Question number counter
@@ -231,7 +257,7 @@ function newQuestion() {
     questionCounter.innerHTML = `Question ${questionNumb} - Category ${randomCategory}`;
 
     let questionDescription = document.getElementById('question-diplay');
-    questionDescription.innerHTML = `${randomNumb} ${randomMetric} corresponds to how many ${randomMetric2}?`;
+    questionDescription.innerHTML = `${randomNumb} ${randomMetric1} corresponds to how many ${randomMetric2}?`;
 
     let answersOptions
 
