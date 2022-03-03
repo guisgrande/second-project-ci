@@ -57,9 +57,36 @@ footer {
     margin-top: 40px;
 }
 
+#social-links-container {
+    height: 80px;
+}
+
 #social-links-container ul {
     display: flex;
     flex-direction: row;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+footer li {
+    list-style: none;
+    padding: 10px;
+    font-size: 30px;
+}
+
+footer a {
+    color:#022B3A;
+    text-shadow: 1px 1px 2px rgb(172, 172, 172);
+}
+
+footer a:hover {
+    color: #BFDBF7;
+    text-shadow: 0 0 5px #022B3A, 0 0 4px #1F7A8C;
+}
+
+#footer-text-container p {
+    font-size: 14px;
+    margin-top: 0;
 }
 
 /* index.html style */
