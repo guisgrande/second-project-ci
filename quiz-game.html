@@ -30,25 +30,56 @@
             <div id="quiz-game-title">
                 <h2>Quiz Game</h2>
             </div>
-            <div id="action-buttons">
-                <button id="start-restart" class="button" onclick="startRestart();"><i class="fa-solid fa-play"></i></button>
-                <p class="button-text">Star/Restart</p>
-                <button id="stop-report" class="button" onclick="stopReport();"><i class="fa-solid fa-stop"></i></button>
-                <p class="button-text">Stop/Report</p>
+            <div id="actions-box">
+                <div class="action-box">
+                    <button id="start-restart" class="button" onclick="startRestart();"><img src="assets/images/icon-play.png" alt="Play icon button image" width="40px" height="40px"></button>
+                    <p class="button-text">Star/Restart</p>
+                </div>
+                <div class="action-box">
+                    <button id="stop-report" class="button" onclick="stopReport();"><img src="assets/images/icon-stop.png" alt="Stop icon button image" width="40px" height="40px"></button>
+                    <p class="button-text">Stop/Report</p>
+                </div>
             </div>
             <div id="score-timer">
-                <div id="correct-score">Correct Answers: --</div>
-                <div id="incorrect-score">Incorrect Answers: --</div>
-                <div id="timer">Timer: --</div>
+                <div id="score-container">
+                    <div class="score effect-shadow" id="correct-score">
+                        <p>Correct Answers: --</p>
+                    </div>
+                    <div class="score effect-shadow" id="incorrect-score">
+                        <p>Incorrect Answers: --</p>
+                    </div>
+                </div>
+                <div id="timer" class="effect-shadow"><p>Timer: --</p></div>
             </div>
-            <div id="questions-box">
-                <p id="question-counter">Question N</p>
-                <p id="question-diplay">Question description ".................?"</p>
+            <div id="questions-box" class="effect-shadow">
+                <p id="question-counter">Question -- | Category: --</p>
+                <p id="question-diplay"></p>
             </div>
             <div id="answer-box">
-                <div id="answer-a" class="answer-option" onclick="answerFeedback();"><p id="show-answer-a">0</p></div>
-                <div id="answer-b" class="answer-option" onclick="answerFeedback();"><p id="show-answer-b">0</p></div>
-                <div id="answer-c" class="answer-option" onclick="answerFeedback();"><p id="show-answer-c">0</p></div>
+                <div class="option-container">
+                    <div id="option-a" class="letter-option">
+                        <p>A</p>
+                    </div>
+                    <div id="answer-a" class="answer-option effect-shadow" onclick="answerFeedback();">
+                        <p id="show-answer-a">0</p>
+                    </div>
+                </div>
+                <div class="option-container">
+                    <div id="option-b" class="letter-option">
+                        <p>B</p>
+                    </div>
+                    <div id="answer-b" class="answer-option effect-shadow" onclick="answerFeedback();">
+                        <p id="show-answer-b">0</p>
+                    </div>
+                </div>
+                <div class="option-container">
+                    <div id="option-c" class="letter-option">
+                        <p>C</p>
+                    </div>
+                    <div id="answer-c" class="answer-option effect-shadow" onclick="answerFeedback();">
+                        <p id="show-answer-c">0</p>
+                    </div>
+                </div>
             </div>
             <div id="rules-box">
                 <h3>Rules</h3>
