@@ -42,20 +42,24 @@
                         <option value="temperature">Temperature</option>
                     </select>
                 </div>
-                <div id="value-box">
-                    <input id="value-base" type="text">
+                <div id="value-box" class="terminal">
+                    <input id="value-base" type="text" placeholder="Input">
                     <select name="metric-one" id="metric-one">
                         <option value="metric-one"></option>
                     </select>
                 </div>
                 <div id="actions-box">
-                    <button id="swap" class="button"><i class="fa-solid fa-arrows-rotate"></i></button>
-                    <p class="button-text">Swap</p>
-                    <button id="clear" class="button"><i class="fa-solid fa-eraser"></i></button>
-                    <p class="button-text">Clear</p>
+                    <div class="action-box">
+                        <button id="swap" class="button"><img src="assets/images/icon-swap.png" alt="Swap icon button" width="40px" height="40px"></button>
+                        <p class="button-text">Swap</p>
+                    </div>
+                    <div class="action-box">
+                        <button id="clear" class="button"><img src="assets/images/icon-clear.png" alt="Swap icon button" width="40px" height="40px"></button>
+                        <p class="button-text">Clear</p>
+                    </div>
                 </div>
-                <div id="answer-box">
-                    <input id="value-result" type="text" disabled>
+                <div id="answer-box" class="terminal">
+                    <input id="value-result" type="text" disabled placeholder="Result">
                     <select name="metric-two" id="metric-two">
                         <option value="metric-two"></option>
                     </select>
