@@ -90,6 +90,8 @@ footer a:hover {
 }
 
 /* index.html style */
+
+/* Selection section style */
 #selection {
     display: flex;
     justify-content: center;
@@ -102,7 +104,32 @@ footer a:hover {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: yellow;
+    background-color: #022B3A;
+    border-radius: 10px;
+    box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.35), 0 7px 22px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Icons style */
+
+.selection-options a {
+    text-decoration: none;
+    color: #BFDBF7;
+    text-shadow: 1px 1px 2px black;
+}
+
+.selection-options i {
+    font-size: 100px;
+}
+
+.selection-options p {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.selection-options a:hover {
+    color: #1F7A8C;
+    text-shadow: 2px 2px 4px black;
 }
 
 /* converter.html style */
