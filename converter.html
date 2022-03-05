@@ -34,19 +34,24 @@
             <div>
                 <div id="category-selector-box">
                     <div id="category-icon"></div>
-                    <select name="category-list" id="categories">
+                    <select name="category-list" id="categories" onchange="convertCategoryMetrics(event)">
                         <option value="scale">Scale</option>
                         <option value="weight">Weight</option>
                         <option value="time">Time</option>
-                        <option value="velocity">Velocity</option>
+                        <option value="speed">Speed</option>
                         <option value="temperature">Temperature</option>
                     </select>
                 </div>
                 <div id="value-box" class="terminal">
                     <input id="value-base" type="text" placeholder="Input">
-                    <select name="metric-one" id="metric-one">
-                        <option value="metric-one">                      
-                        </option>
+                    <select name="metric-one" id="metric-one" class="metric-select">
+                        <option value="centimeters">Centimeters</option>
+                        <option value="meters">Meters</option>
+                        <option value="kilometers">Kilometers</option>
+                        <option value="miles">Miles</option>
+                        <option value="inches">Inches</option>
+                        <option value="foot">Foot</option>
+                        <option value="yards">Yards</option>
                     </select>
                 </div>
                 <div id="actions-box">
@@ -61,9 +66,14 @@
                 </div>
                 <div id="converter-answer-box" class="terminal">
                     <input id="value-result" type="text" disabled placeholder="Result">
-                    <select name="metric-two" id="metric-two">
-                        <option value="metric-two">
-                        </option>
+                    <select name="metric-two" id="metric-two" class="metric-select">
+                        <option value="centimeters">Centimeters</option>
+                        <option value="meters">Meters</option>
+                        <option value="kilometers">Kilometers</option>
+                        <option value="miles">Miles</option>
+                        <option value="inches">Inches</option>
+                        <option value="foot">Foot</option>
+                        <option value="yards">Yards</option>
                     </select>
                 </div>
             </div>
