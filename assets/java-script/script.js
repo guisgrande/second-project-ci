@@ -308,11 +308,87 @@ let gramsToPounds = inputVal / 454;
 // converter.html functions
 
 /**
+ * Change the options following the category selector. 
+ */
+ function convertCategoryMetrics() {
+
+    let categories = {
+    speed:['Miles per hour', 'KM per hour'],
+    temperature:['Celsius', 'Fahrenheit', 'Kelvin'],
+    time:['Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months', 'Years'],
+    scale:['Centimetres', 'Meters', 'Kilometers', 'Miles', 'Inches', 'Foot', 'Yards'],
+    weight:['Tonne', 'Kilos', 'Grams', 'Milligrams', 'Ounce', 'Pounds'],
+    };
+
+let c1 = document.getElementById('categories');
+let m1 = document.getElementById('metric-one');
+let m2 = document.getElementById('metric-two');
+
+c1.addEventListener('change', function(){
+
+    let selected_option = categories[this.value];
+
+    while(m1.options.length > 0) {
+        m1.options.remove(0);
+    }
+
+    Array.from(selected_option).forEach(function(el){
+
+        let option = new Option(el, el);
+
+        m1.appendChild(option);
+    });
+
+});
+c1.addEventListener('change', function(){
+
+    let selected_option = categories[this.value];
+
+    while(m2.options.length > 0) {
+        m2.options.remove(0);
+    }
+
+    Array.from(selected_option).forEach(function(el){
+
+        let option = new Option(el, el);
+
+        m2.appendChild(option);
+    });
+
+});
+
+}
+
+/**
  * Receives the value of metric 1 and returns the conversation for metric 2.
  */
 function convertMetrics() {
 
-}
+let valueIn = document.getElementById('value-base');
+let valueOut = document.getElementById('value-result');
+let convertCategory = document.getElementById('categories');
+let convertMetric1 = document.querySelectorAll('metric-one');
+let convertMetric2 = document.querySelectorAll('metric-two');
+
+inputVal = valueIn;
+metric1 = convertMetric1;
+metric2 = convertMetric2;
+
+if (convertCategory === 'speed') {
+    speedConvert(inputVal);
+} else if (convertCategory === 'temperature') {
+    temperatureConvert(inputVal);
+} else if (convertCategory === 'time') {
+    timeConvert(inputVal);
+} else if (convertCategory === 'scale') {
+    scaleConvert(inputVal);
+} else {
+    weightConvert(inputVal);
+};
+
+valueOut.innerHTML = `${result}`;
+
+};
 
 /**
  * Exchanges metric 1 for metric 2.
