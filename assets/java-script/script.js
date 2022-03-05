@@ -1,5 +1,6 @@
 // Metrics database
 let inputVal = 0;
+let result = 0;
 
 let categories = ['speed', 'temperature', 'time', 'scale', 'weight'];
 
@@ -36,7 +37,7 @@ if (metric1 === 'Celsius' && metric2 === 'Fahrenheit') {
 };
 
 // Time base convert
-function timeConvert {
+function timeConvert() {
 // seconds
 if (metric1 === 'Seconds' && metric2 === 'Minutes') {
     result.value = inputVal / 60;
@@ -327,10 +328,10 @@ function clearMetrics() {
 function timerStart() {
 let timerSeconds = 30;
 let timerCountdown = document.getElementById('timer');
-timerCountdown.innerHTML = `Timer: ${timerSeconds}`;
+timerCountdown.innerHTML = `<p>Timer: ${timerSeconds}</p>`;
 let timerDecres = setInterval (()=>{
     timerSeconds--;
-    timerCountdown.innerHTML = `Timer: ${timerSeconds}`;
+    timerCountdown.innerHTML = `<p>Timer: ${timerSeconds}</p>`;
     if (timerSeconds <= 0 || timerSeconds < 0) {
         clearInterval(timerDecres)
         // call new question
@@ -344,59 +345,59 @@ let timerDecres = setInterval (()=>{
 function newQuestion() {
     // Random number to the question
     let randomNumb = Math.floor(Math.random() * 100)
+    randomNumb;
 
     // Random category to the question
     let categories = ['speed', 'temperature', 'time', 'scale', 'weight'];
     let randomCategory = categories[Math.floor(Math.random() * categories.length)];
     randomCategory;
 
+    let speed = ['Miles per hour', 'KM per hour'];
+    let temperature = ['Celsius', 'Fahrenheit', 'Kelvin'];
+    let time = ['Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months', 'Years'];
+    let scale = ['Centimetres', 'Meters', 'Kilometers', 'Miles', 'Inches', 'Foot', 'Yards'];
+    let weight = ['Tonne', 'Kilos', 'Grams', 'Milligrams', 'Ounce', 'Pounds'];
+
+    let randomMetric1 = "";
+    let randomMetric2 = "";
+
     // Select the first metric using Math.random, filter to exclude the first metric, then Math.random again to select the scond metric.
     if (randomCategory === 'speed') {
-        let randomMetric1 = speed[Math.floor(Math.random() * speed.length)];
-        randomMetric1;
+        randomMetric1 = speed[Math.floor(Math.random() * speed.length)];
         let speedFilter = speed.filter(metric => {
             return metric !== randomMetric1;
         });
-        let randomMetric2 = speedFilter[Math.floor(Math.random() * speedFilter.length)];
-        randomMetric2;
+        randomMetric2 = speedFilter[Math.floor(Math.random() * speedFilter.length)];
     } else if (randomCategory === 'temperature') {
-        let randomMetric1 = temperature[Math.floor(Math.random() * temperature.length)];
-        randomMetric1;
+        randomMetric1 = temperature[Math.floor(Math.random() * temperature.length)];
         let temperatureFilter = temperature.filter(metric => {
             return metric !== randomMetric1;
         });
-        let randomMetric2 = temperatureFilter[Math.floor(Math.random() * temperatureFilter.length)];
-        randomMetric2;
+        randomMetric2 = temperatureFilter[Math.floor(Math.random() * temperatureFilter.length)];
     } else if (randomCategory === 'time') {
-        let randomMetric1 = time[Math.floor(Math.random() * time.length)];
-        randomMetric1;
+        randomMetric1 = time[Math.floor(Math.random() * time.length)];
         let timeFilter = time.filter(metric => {
             return metric !== randomMetric1;
         });
-        let randomMetric2 = timeFilter[Math.floor(Math.random() * timeFilter.length)];
-        randomMetric2;
+        randomMetric2 = timeFilter[Math.floor(Math.random() * timeFilter.length)];
     } else if (randomCategory === 'scale') {
-        let randomMetric1 = scale[Math.floor(Math.random() * scale.length)];
-    randomMetric1;
+        randomMetric1 = scale[Math.floor(Math.random() * scale.length)];
         let scaleFilter = scale.filter(metric => {
             return metric !== randomMetric1;
         });
-        let randomMetric2 = scaleFilter[Math.floor(Math.random() * scaleFilter.length)];
-        randomMetric2;
+        randomMetric2 = scaleFilter[Math.floor(Math.random() * scaleFilter.length)];
     } else {
-        let randomMetric1 = weight[Math.floor(Math.random() * weight.length)];
-        randomMetric1;
+        randomMetric1 = weight[Math.floor(Math.random() * weight.length)];
         let weightFilter = weight.filter(metric => {
             return metric !== randomMetric1;
         });
-        let randomMetric2 = weightFilter[Math.floor(Math.random() * weightFilter.length)];
-        randomMetric2;
+        randomMetric2 = weightFilter[Math.floor(Math.random() * weightFilter.length)];
     }
 
     // Question number counter
     let questionNumb = 01;
     let questionCounter = document.getElementById('question-counter');
-    questionCounter.innerHTML = `Question ${questionNumb} - Category ${randomCategory}`;
+    questionCounter.innerHTML = `Question ${questionNumb} | Category ${randomCategory}`;
 
     let questionDescription = document.getElementById('question-diplay');
     questionDescription.innerHTML = `${randomNumb} ${randomMetric1} corresponds to how many ${randomMetric2}?`;
@@ -407,18 +408,18 @@ function newQuestion() {
     metric2 = randomMetric2;
 
     if (randomCategory === 'speed') {
-        speedConvert();
+        speedConvert(inputVal);
     } else if (randomCategory === 'temperature') {
-        temperatureConvert();
+        temperatureConvert(inputVal);
     } else if (randomCategory === 'time') {
-        timeConvert();
+        timeConvert(inputVal);
     } else if (randomCategory === 'scale') {
-        scaleConvert();
+        scaleConvert(inputVal);
     } else {
-        weightConvert();
+        weightConvert(inputVal);
     }
 
-    let correctAnswer = ;
+    let correctAnswer = result;
     let wrongAnswer1 = correctAnswer + Math.floor(Math.random() * 1000);
     let wrongAnswer2 = correctAnswer + Math.floor(Math.random() * 1000);
 
@@ -435,8 +436,8 @@ function startRestart() {
     cleanRules.parentNode.removeChild(cleanRules);
 
     // Reset the counters to zero
-    let correctReset = document.getElementById('correct-score').innerHTML = "Correct Answers: 00";
-    let incorrectReset = document.getElementById('incorrect-score').innerHTML = "Incorrect Answers: 00";
+    let correctReset = document.getElementById('correct-score').innerHTML = "<p>Correct Answers: 00</p>";
+    let incorrectReset = document.getElementById('incorrect-score').innerHTML = "<p>Incorrect Answers: 00</p>";
 
     // Start the timer
     timerStart();
