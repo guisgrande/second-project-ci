@@ -360,7 +360,7 @@ function newQuestion() {
     let randomMetric1 = "";
     let randomMetric2 = "";
 
-    // Select the first metric using Math.random, filter to exclude the first metric, then Math.random again to select the scond metric.
+    // Select the first metric using Math.random, filter to exclude the first metric, then Math.random again to select the scond metric. Generate two random metrics to use in the question.
     if (randomCategory === 'speed') {
         randomMetric1 = speed[Math.floor(Math.random() * speed.length)];
         let speedFilter = speed.filter(metric => {
@@ -409,10 +409,11 @@ function newQuestion() {
     let randomAnswer1 = 0;
     let randomAnswer2 = 0; 
 
+    // Get the randomCategory valy to select the correct function, run function to calculate the correct result, generate random answers for each category.
     if (randomCategory === 'speed') {
         speedConvert(inputVal);
         randomAnswer1 = Math.floor(Math.random() * 15);
-        randomAnswer2 = Math.floor(Math.random() * 15);
+        randomAnswer2 = Math.floor(Math.random() * 13);
     } else if (randomCategory === 'temperature') {
         temperatureConvert(inputVal);
         randomAnswer1 = Math.floor(Math.random() * 10);
@@ -435,13 +436,48 @@ function newQuestion() {
     let wrongAnswer1 = correctAnswer + randomAnswer1;
     let wrongAnswer2 = correctAnswer + randomAnswer2;
 
+    // To avoid the same answers
+    if (correctAnswer === wrongAnswer1) {
+        wrongAnswer1 = wrongAnswer1 + 1;
+    } else if (correctAnswer === wrongAnswer2) {
+        wrongAnswer2 = wrongAnswer2 - 1;
+    } else if (wrongAnswer1 === wrongAnswer2) {
+        wrongAnswer1 = correctAnswer - 1;
+    };
+
+    // To limit the number of decimal
+    if (parseFloat(correctAnswer)) {
+        correctAnswer = correctAnswer.toFixed(5);
+        wrongAnswer1 = wrongAnswer1.toFixed(5);
+        wrongAnswer2 = wrongAnswer2.toFixed(5);
+      } else {
+        correctAnswer = correctAnswer.toFixed(0);
+        wrongAnswer1 = wrongAnswer1.toFixed(0);
+        wrongAnswer2 = wrongAnswer2.toFixed(0);
+      }
+
+    // To randomly choose the answer option
+    let randomQuestion = [correctAnswer, wrongAnswer1, wrongAnswer2];
+    let randomA = randomQuestion[Math.floor(Math.random() * randomQuestion.length)];
+    randomA;
+    let randomFilter = randomQuestion.filter(answer => {
+        return answer !== randomA;
+    });
+    let randomB = randomFilter[Math.floor(Math.random() * randomFilter.length)];
+    randomB;
+    let randomFilter2 = randomFilter.filter(answer => {
+        return answer !== randomB;
+    });
+    let randomC = randomFilter2;
+    randomC;
+
     let questionA = document.getElementById('show-answer-a');
     let questionB = document.getElementById('show-answer-b');
     let questionC = document.getElementById('show-answer-c');
 
-    questionA.innerHTML = `${correctAnswer}`;
-    questionB.innerHTML = `${wrongAnswer1}`;
-    questionC.innerHTML = `${wrongAnswer2}`;
+    questionA.innerHTML = `${randomA}`;
+    questionB.innerHTML = `${randomB}`;
+    questionC.innerHTML = `${randomC}`;
 
 }
 
