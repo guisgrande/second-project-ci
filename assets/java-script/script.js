@@ -14,10 +14,10 @@ let time = ['Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months', 'Years'];
 let scale = ['Centimetres', 'Meters', 'Kilometers', 'Miles', 'Inches', 'Foot', 'Yards'];
 let weight = ['Tonne', 'Kilos', 'Grams', 'Milligrams', 'Ounce', 'Pounds'];
 
-// Metrics functions for each category, using if/else to verify the metrics
+// Metrics functions for each category, using if/else to verify the metrics.
 
-function speedConvert() {
 // Speed base convertion
+function speedConvert() {
 if (metric1 === 'Miles per hour' && metric2 === 'KM per hour') {
     result = inputVal * 1.609;
 } else {
@@ -25,8 +25,8 @@ if (metric1 === 'Miles per hour' && metric2 === 'KM per hour') {
 };
 };
 
-function temperatureConvert() {
 // Temperature base convertion
+function temperatureConvert() {
 if (metric1 === 'Celsius' && metric2 === 'Fahrenheit') {
     result = (inputVal * 1.8) + 32;
 } else if (metric1 === 'Celsius' && metric2 ==='Kelvin') {
@@ -360,35 +360,37 @@ c1.addEventListener('change', function(){
 }
 
 /**
- * Receives the value of metric 1 and returns the conversation for metric 2.
+ * Receives the value of metric 1 and returns the conversion for metric 2.
  */
-function convertMetrics() {
+function convertMetrics(event) {
 
 let valueIn = document.getElementById('value-base');
 let valueOut = document.getElementById('value-result');
 let convertCategory = document.getElementById('categories');
-let convertMetric1 = document.querySelectorAll('metric-one');
-let convertMetric2 = document.querySelectorAll('metric-two');
+let convertMetric1 = document.getElementById('metric-one');
+let convertMetric2 = document.getElementById('metric-two');
 
 inputVal = valueIn;
 metric1 = convertMetric1;
 metric2 = convertMetric2;
 
-if (convertCategory === 'speed') {
+// Checks which category was selected and determines which function to call
+if (convertCategory === 'Speed') {
     speedConvert(inputVal);
-} else if (convertCategory === 'temperature') {
+} else if (convertCategory === 'Temperature') {
     temperatureConvert(inputVal);
-} else if (convertCategory === 'time') {
+} else if (convertCategory === 'Time') {
     timeConvert(inputVal);
-} else if (convertCategory === 'scale') {
+} else if (convertCategory === 'Scale') {
     scaleConvert(inputVal);
 } else {
     weightConvert(inputVal);
 };
 
-valueOut.innerHTML = `${result}`;
-
-};
+valueIn.addEventListener('keyup', function() {
+    valueOut.innerHTML = `${result}`;
+});
+}
 
 /**
  * Exchanges metric 1 for metric 2.
@@ -406,6 +408,12 @@ function clearMetrics() {
 
 // quiz-game.html functions
 
+// Quiz-game global variables.
+let correctScore = document.querySelectorAll('correct-score');
+let incorrectScore = document.querySelectorAll('incorrect-score');
+correctScore = 0;
+incorrectScore = 0;
+
 // Timer function
 function timerStart() {
 let timerSeconds = 30;
@@ -415,8 +423,8 @@ let timerDecres = setInterval (()=>{
     timerSeconds--;
     timerCountdown.innerHTML = `<p>Timer: ${timerSeconds}</p>`;
     if (timerSeconds <= 0 || timerSeconds < 0) {
-        clearInterval(timerDecres)
-        // call new question
+        clearInterval(timerDecres);
+        newQuestion();
         // add incorrect answer
         // start timer again         
     }
@@ -470,9 +478,9 @@ function newQuestion() {
     }
 
     // Question number counter
-    let questionNumb = 01;
+    let questionNumb = 00;
     let questionCounter = document.getElementById('question-counter');
-    questionCounter.innerHTML = `Question ${questionNumb} | Category ${randomCategory}`;
+    questionCounter.innerHTML = `Question ${questionNumb} of 15 | Category ${randomCategory}`;
 
     let questionDescription = document.getElementById('question-diplay');
     questionDescription.innerHTML = `${randomNumb} ${randomMetric1} corresponds to how many ${randomMetric2}?`;
@@ -555,6 +563,8 @@ function newQuestion() {
     questionB.innerHTML = `${randomB}`;
     questionC.innerHTML = `${randomC}`;
 
+    timerStart();
+
 }
 
 /**
@@ -568,8 +578,10 @@ function startRestart() {
     cleanRules.parentNode.removeChild(cleanRules);
 
     // Reset the counters to zero
-    let correctReset = document.getElementById('correct-score').innerHTML = "<p>Correct Answers: 00</p>";
-    let incorrectReset = document.getElementById('incorrect-score').innerHTML = "<p>Incorrect Answers: 00</p>";
+    correctScore = 0;
+    incorrectScore = 0;
+    let correctReset = document.getElementById('correct-score').innerHTML = `<p>Correct Answers: ${correctScore}</p>`;
+    let incorrectReset = document.getElementById('incorrect-score').innerHTML = `<p>Incorrect Answers: ${incorrectScore}</p>`;
 
     // Start the timer
     timerStart();
@@ -593,5 +605,8 @@ function stopReport() {
  * restarts the counter at 30 seconds.
  */
 function answerFeedback() {
-
+    let answeredA = document.getElementById('answer-a');
+    let answeredB = document.getElementById('answer-b');
+    let answeredC = document.getElementById('answer-c');
+    
 }
