@@ -319,7 +319,7 @@ let gramsToPounds = inputVal / 454;
 
 let valueIn = document.getElementById('value-base');
 let valueOut = document.getElementById('value-result');
-let convertCategory = document.getElementById('categories');
+let convertCategory = document.getElementById('categories').value;
 let convertMetric1 = document.getElementById('metric-one');
 let convertMetric2 = document.getElementById('metric-two');
 
@@ -378,28 +378,36 @@ c1.addEventListener('change', function(){
 /**
  * Receives the value of metric 1 and returns the conversion for metric 2.
  */
-function convertMetrics(event) {
 
-inputVal = valueIn;
-metric1 = convertMetric1;
-metric2 = convertMetric2;
+valueIn.addEventListener("keyup", convertFunction);
+convertMetric1.addEventListener("change", convertFunction);
+convertMetric2.addEventListener("change", convertFunction);
 
-// Checks which category was selected and determines which function to call
-if (convertCategory === 'Speed') {
-    speedConvert(inputVal);
-} else if (convertCategory === 'Temperature') {
-    temperatureConvert(inputVal);
-} else if (convertCategory === 'Time') {
-    timeConvert(inputVal);
-} else if (convertCategory === 'Scale') {
-    scaleConvert(inputVal);
-} else {
-    weightConvert(inputVal);
-};
+function convertFunction() {
+    inputVal = valueIn.value;
+    convertCategory;
+    metric1 = convertMetric1.value;
+    metric2 = convertMetric2.value;
 
-valueIn.addEventListener('keyup', function() {
-    valueOut.innerHTML = `${result}`;
-});
+    // Checks which category was selected and determines which function to call
+    if (convertCategory === 'speed') {
+        speedConvert(inputVal);
+    } else if (convertCategory === 'temperature') {
+        temperatureConvert(inputVal);
+    } else if (convertCategory === 'time') {
+        timeConvert(inputVal);
+    } else if (convertCategory === 'scale') {
+        scaleConvert(inputVal);
+    } else if (convertCategory === 'weight') {
+        weightConvert(inputVal);
+    };
+
+    valueOut.value = result;
+
+    console.log(result);
+    console.log(metric1);
+    console.log(metric2);
+    console.log(convertCategory);
 }
 
 /**
