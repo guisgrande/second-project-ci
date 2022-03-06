@@ -449,16 +449,15 @@ let timerDecres = setInterval (()=>{
     timerCountdown.innerHTML = `<p>Timer: ${timerSeconds}</p>`;
     if (timerSeconds <= 0 || timerSeconds < 0) {
         clearInterval(timerDecres);
+        incorrectScore += 1;
         newQuestion();
-        // add incorrect answer
-        // start timer again         
     }
 }, 1000);
 }
 
 // Create the new question and the answers
 function newQuestion() {
-    // Random number to the question
+    // Random number to the question, 1 to 101.
     let randomNumb = Math.floor(Math.random() * 100 + 1)
     randomNumb;
 
@@ -466,10 +465,10 @@ function newQuestion() {
     let randomCategory = categories[Math.floor(Math.random() * categories.length)];
     randomCategory;
 
+    // Select the first metric using Math.random, filter to exclude the first metric, then Math.random again to select the scond metric. Generate two random metrics to use in the question.
     let randomMetric1 = "";
     let randomMetric2 = "";
 
-    // Select the first metric using Math.random, filter to exclude the first metric, then Math.random again to select the scond metric. Generate two random metrics to use in the question.
     if (randomCategory === 'speed') {
         randomMetric1 = speed[Math.floor(Math.random() * speed.length)];
         let speedFilter = speed.filter(metric => {
@@ -654,7 +653,7 @@ answeredA.onclick = () => {
 }
 
 answeredB.onclick = () => {
-    if (valueB.value === result) {
+    if (valueB.value = result) {
         correctScore += 1;
         newQuestion();
     } else {
@@ -664,7 +663,7 @@ answeredB.onclick = () => {
 }
 
 answeredC.onclick = () => {
-    if (valueC.value === result) {
+    if (valueC.value = result) {
         correctScore += 1;
         newQuestion();
     } else {
