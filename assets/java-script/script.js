@@ -315,6 +315,14 @@ let gramsToPounds = inputVal / 454;
 
 // converter.html functions
 
+// Global variables to converter.html page
+
+let valueIn = document.getElementById('value-base');
+let valueOut = document.getElementById('value-result');
+let convertCategory = document.getElementById('categories');
+let convertMetric1 = document.getElementById('metric-one');
+let convertMetric2 = document.getElementById('metric-two');
+
 /**
  * Change the options following the category selector. 
  */
@@ -372,12 +380,6 @@ c1.addEventListener('change', function(){
  */
 function convertMetrics(event) {
 
-let valueIn = document.getElementById('value-base');
-let valueOut = document.getElementById('value-result');
-let convertCategory = document.getElementById('categories');
-let convertMetric1 = document.getElementById('metric-one');
-let convertMetric2 = document.getElementById('metric-two');
-
 inputVal = valueIn;
 metric1 = convertMetric1;
 metric2 = convertMetric2;
@@ -404,6 +406,17 @@ valueIn.addEventListener('keyup', function() {
  * Exchanges metric 1 for metric 2.
  */
 function swapMetrics() {
+// hold variables get the value from input and metric selected, and chenge the positions.
+let holdValue1 = valueIn.value;
+let holdValue2 = valueOut.value;
+let holdMetric1 = convertMetric1.value;
+let holdMetric2 = convertMetric2.value;
+
+valueIn.value = holdValue2;
+valueOut.value = holdValue1;
+
+convertMetric1.value = holdMetric2;
+convertMetric2.value = holdMetric1;
 
 }
 
@@ -411,9 +424,6 @@ function swapMetrics() {
  * Clear all the values.
  */
 function clearMetrics() {
-
-let valueIn = document.getElementById('value-base');
-let valueOut = document.getElementById('value-result');
 
 valueIn.value = "";
 valueOut.value = "";
