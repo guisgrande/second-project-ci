@@ -412,6 +412,12 @@ function swapMetrics() {
  */
 function clearMetrics() {
 
+let valueIn = document.getElementById('value-base');
+let valueOut = document.getElementById('value-result');
+
+valueIn.value = "";
+valueOut.value = "";
+
 }
 
 // quiz-game.html functions
