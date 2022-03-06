@@ -1,5 +1,3 @@
-// Metrics database
-
 // Global variables
 let inputVal = 0;
 let result = 0;
@@ -20,10 +18,12 @@ let weight = ['Tonne', 'Kilos', 'Grams', 'Milligrams', 'Ounce', 'Pounds'];
 function speedConvert() {
 if (metric1 === 'Miles per hour' && metric2 === 'KM per hour') {
     result = inputVal * 1.609;
-} else {
+} else if (metric1 === 'KM per hour' && metric2 === 'Miles per hour') {
     result = inputVal / 1.609;
-};
-};
+} else {
+    result = inputVal * 1;
+}
+}
 
 // Temperature base convertion
 function temperatureConvert() {
@@ -37,10 +37,12 @@ if (metric1 === 'Celsius' && metric2 === 'Fahrenheit') {
     result = (inputVal - 32) * 0.55 + 273.15;
 } else if (metric1 === 'Kelvin' && metric2 === 'Celsius') {
     result = inputVal - 273.15;
-} else {
+} else if (metric1 === 'Kelvin' && metric2 === 'Fahrenheit') {
     result = (inputVal - 273.15) * 1.8 + 32;
-};
-};
+} else {
+    result = inputVal * 1;
+}
+}
 
 // Time base convert
 function timeConvert() {
@@ -133,10 +135,12 @@ if (metric1 === 'Seconds' && metric2 === 'Minutes') {
     result = inputVal * 365;
 } else if (metric1 === 'Years' && metric2 === 'Weeks') {
     result = inputVal * 52.143;
-} else {
+} else if (metric1 === 'Years' && metric2 === 'Months') {
     result = inputVal * 12;
-};
-};
+} else {
+    result = inputVal *1;
+}
+}
 
 // Scale base convert
 function scaleConvert() {
@@ -229,10 +233,12 @@ if (metric1 === 'Centimeters' && metric2 === 'Meters') {
     result = inputVal / 1760;
 } else if (metric1 === 'Yards' && metric2 === 'Inches') {
     result = inputVal * 36;
-} else {
+} else if (metric1 === 'Yards' && metric2 === 'Foot'){
     result = inputVal * 3;
-};
-};
+} else {
+    result = inputVal * 1;
+}
+}
 
 // Weight base convert
 function weightConvert() {
@@ -300,10 +306,12 @@ let gramsToPounds = inputVal / 454;
     result = inputVal * 454;
 } else if (metric1 === 'Pounds' && metric2 === 'Milligrams') {
     result = inputVal * 453592;
-} else {
+} else if (metric1 === 'Pounds' && metric2 === 'Ounce') {
     result = inputVal * 16;
-};
-};
+} else {
+    result = inputVal * 1;
+}
+}
 
 // converter.html functions
 
