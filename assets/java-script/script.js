@@ -444,6 +444,7 @@ function timerStart() {
 let timerSeconds = 30;
 let timerCountdown = document.getElementById('timer');
 timerCountdown.innerHTML = `<p>Timer: ${timerSeconds}</p>`;
+
 let timerDecres = setInterval (()=>{
     timerSeconds--;
     timerCountdown.innerHTML = `<p>Timer: ${timerSeconds}</p>`;
@@ -451,12 +452,26 @@ let timerDecres = setInterval (()=>{
         clearInterval(timerDecres);
         incorrectScore += 1;
         newQuestion();
+        timerStart();
     }
 }, 1000);
+
 }
 
 // Create the new question and the answers
 function newQuestion() {
+
+    // Check the rules - 8 wrong answer and 15 question total.
+    if (incorrectScore >= 8) {
+        alert("Ops, you lose! You scored 8 incorrect answers. Try again!")
+        // stopReport();
+    } else if (questionNumb >= 15) {
+        alert("End game! Check your results!")
+        // stopReport();
+    } else {
+        console.log("Question Nº" + (questionNumb + 1))
+    }
+
     // Random number to the question, 1 to 101.
     let randomNumb = Math.floor(Math.random() * 100 + 1)
     randomNumb;
@@ -506,6 +521,7 @@ function newQuestion() {
     let questionCounter = document.getElementById('question-counter');
     questionCounter.innerHTML = `Question ${questionNumb} of 15 | Category ${randomCategory}`;
 
+    // Question display
     let questionDescription = document.getElementById('question-diplay');
     questionDescription.innerHTML = `${randomNumb} ${randomMetric1} corresponds to how many ${randomMetric2}?`;
 
@@ -591,7 +607,6 @@ function newQuestion() {
     questionB.innerHTML = `${randomB}`;
     questionC.innerHTML = `${randomC}`;
 
-    timerStart();
     console.log(result);
 
 }
@@ -643,31 +658,47 @@ function stopReport() {
  let valueC = document.getElementById('show-answer-c');
 
 answeredA.onclick = () => {
+
     if (valueA.value = result) {
         correctScore += 1;
         newQuestion();
+        timerStart();
     } else {
         incorrectScore += 1;
         newQuestion();
+        timerStart();
     }
+
+    console.log("A = " + valueA.value)
+
 }
 
 answeredB.onclick = () => {
+
     if (valueB.value = result) {
         correctScore += 1;
         newQuestion();
+        timerStart();
     } else {
         incorrectScore += 1;
         newQuestion();
+        timerStart();
     }
+
+    console.log("B = " + valueB.value)
 }
 
 answeredC.onclick = () => {
+
     if (valueC.value = result) {
         correctScore += 1;
         newQuestion();
+        timerStart();
     } else {
         incorrectScore += 1;
         newQuestion();
+        timerStart();
     }
+    
+    console.log("C = " + valueC.value)
 }
