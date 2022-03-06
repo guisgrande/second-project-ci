@@ -433,10 +433,11 @@ valueOut.value = "";
 // quiz-game.html functions
 
 // Quiz-game global variables.
-let correctScore = document.querySelectorAll('correct-score');
-let incorrectScore = document.querySelectorAll('incorrect-score');
-correctScore = 0;
-incorrectScore = 0;
+let correctDisplay = document.getElementById('correct-score');
+let incorrectDisplay = document.getElementById('incorrect-score');
+let correctScore = 0;
+let incorrectScore = 0;
+let questionNumb = 0;
 
 // Timer function
 function timerStart() {
@@ -502,12 +503,16 @@ function newQuestion() {
     }
 
     // Question number counter
-    let questionNumb = 00;
+    questionNumb += 1;
     let questionCounter = document.getElementById('question-counter');
     questionCounter.innerHTML = `Question ${questionNumb} of 15 | Category ${randomCategory}`;
 
     let questionDescription = document.getElementById('question-diplay');
     questionDescription.innerHTML = `${randomNumb} ${randomMetric1} corresponds to how many ${randomMetric2}?`;
+
+    // Score counter update
+    correctDisplay.innerHTML = `<p>Correct Answers: ${correctScore}</p>`
+    incorrectDisplay.innerHTML = `<p>Incorrect Answers: ${incorrectScore}</p>`
 
     // Quesiton generator
     inputVal = randomNumb;
@@ -588,6 +593,7 @@ function newQuestion() {
     questionC.innerHTML = `${randomC}`;
 
     timerStart();
+    console.log(result);
 
 }
 
@@ -628,9 +634,41 @@ function stopReport() {
  * shows the next question and answers,
  * restarts the counter at 30 seconds.
  */
-function answerFeedback() {
-    let answeredA = document.getElementById('answer-a');
-    let answeredB = document.getElementById('answer-b');
-    let answeredC = document.getElementById('answer-c');
-    
+// get the divs of answers options
+ let answeredA = document.getElementById('answer-a');
+ let answeredB = document.getElementById('answer-b');
+ let answeredC = document.getElementById('answer-c');
+
+ let valueA = document.getElementById('show-answer-a');
+ let valueB = document.getElementById('show-answer-b');
+ let valueC = document.getElementById('show-answer-c');
+
+answeredA.onclick = () => {
+    if (valueA.value = result) {
+        correctScore += 1;
+        newQuestion();
+    } else {
+        incorrectScore += 1;
+        newQuestion();
+    }
+}
+
+answeredB.onclick = () => {
+    if (valueB.value === result) {
+        correctScore += 1;
+        newQuestion();
+    } else {
+        incorrectScore += 1;
+        newQuestion();
+    }
+}
+
+answeredC.onclick = () => {
+    if (valueC.value === result) {
+        correctScore += 1;
+        newQuestion();
+    } else {
+        incorrectScore += 1;
+        newQuestion();
+    }
 }
