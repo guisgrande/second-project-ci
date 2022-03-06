@@ -358,6 +358,12 @@ footer a:hover {
     box-shadow: 2px 2px 4px black;
 }
 
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* !!Media queries!! */
 @media screen and (max-width: 800px) {
 
