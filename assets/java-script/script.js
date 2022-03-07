@@ -322,6 +322,10 @@ let correctScore = 0;
 let incorrectScore = 0;
 let questionNumb = 0;
 
+let answerA = document.getElementById('show-answer-a');
+let answerB = document.getElementById('show-answer-b');
+let answerC = document.getElementById('show-answer-c');
+
 // Timer function
 let timerSeconds = "--";
 let timerCountdown = document.getElementById('timer');
@@ -456,16 +460,7 @@ function newQuestion() {
         wrongAnswer1 = correctAnswer - 1;
     };
 
-    // To limit the number of decimal
-    if (parseFloat(correctAnswer)) {
-        correctAnswer = correctAnswer.toFixed(5);
-        wrongAnswer1 = wrongAnswer1.toFixed(5);
-        wrongAnswer2 = wrongAnswer2.toFixed(5);
-      } else {
-        correctAnswer = correctAnswer.toFixed(0);
-        wrongAnswer1 = wrongAnswer1.toFixed(0);
-        wrongAnswer2 = wrongAnswer2.toFixed(0);
-      }
+
 
     // To randomly choose the answer option
     let randomQuestion = [correctAnswer, wrongAnswer1, wrongAnswer2];
@@ -482,15 +477,15 @@ function newQuestion() {
     let randomC = randomFilter2;
     randomC;
 
-    let questionA = document.getElementById('show-answer-a');
-    let questionB = document.getElementById('show-answer-b');
-    let questionC = document.getElementById('show-answer-c');
-
-    questionA.innerHTML = `${randomA}`;
-    questionB.innerHTML = `${randomB}`;
-    questionC.innerHTML = `${randomC}`;
+    answerA.innerHTML = `${randomA}`;
+    answerB.innerHTML = `${randomB}`;
+    answerC.innerHTML = `${randomC}`;
 
     console.log(result);
+
+    console.log('Option A ' + answerA.innerText);
+    console.log('Option B ' + answerB.innerText);
+    console.log('Option C ' + answerC.innerText);
 
 }
 
@@ -540,13 +535,15 @@ document.getElementById('stop-report').addEventListener('click', stopReport);
  let answeredB = document.getElementById('answer-b');
  let answeredC = document.getElementById('answer-c');
 
- let valueA = document.getElementById('show-answer-a');
- let valueB = document.getElementById('show-answer-b');
- let valueC = document.getElementById('show-answer-c');
-
 answeredA.onclick = () => {
 
-    if (valueA.value == result) {
+    console.log("Correct is " + result);
+    console.log("VALUE is" + answerA.value);
+    console.log("ELEMENT P is " + answerA.innerText);
+    console.log("Answered DIV is " + answeredA);
+    console.log("Answered value is " + answeredA.value);
+
+    if (answerA.innerText == result) {
         correctScore += 1;
         newQuestion();
         timerStart();
@@ -556,13 +553,15 @@ answeredA.onclick = () => {
         timerStart();
     }
 
-    console.log("A = " + valueA.value)
-
+    console.log("A = " + answerA.value)
+    
 }
 
 answeredB.onclick = () => {
 
-    if (valueB.value == result) {
+    console.log("Correct is " + result)
+
+    if (answerB.innerText == result) {
         correctScore += 1;
         newQuestion();
         timerStart();
@@ -572,12 +571,15 @@ answeredB.onclick = () => {
         timerStart();
     }
 
-    console.log("B = " + valueB.value)
+    console.log("B = " + answerB.value)
+
 }
 
 answeredC.onclick = () => {
 
-    if (valueC.value == result) {
+    console.log("Correct is " + result)
+
+    if (answerC.innerText == result) {
         correctScore += 1;
         newQuestion();
         timerStart();
@@ -587,5 +589,6 @@ answeredC.onclick = () => {
         timerStart();
     }
     
-    console.log("C = " + valueC.value)
+    console.log("C = " + answerC.value)
+
 }
