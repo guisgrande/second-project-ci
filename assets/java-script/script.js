@@ -323,23 +323,23 @@ let incorrectScore = 0;
 let questionNumb = 0;
 
 // Timer function
-function timerStart() {
-let timerSeconds = 30;
+let timerSeconds = "--";
 let timerCountdown = document.getElementById('timer');
-timerCountdown.innerHTML = `<p>Timer: ${timerSeconds}</p>`;
-
 let timerDecres = setInterval (()=>{
     timerSeconds--;
     timerCountdown.innerHTML = `<p>Timer: ${timerSeconds}</p>`;
     if (timerSeconds <= 0 || timerSeconds < 0) {
-        clearInterval(timerDecres);
         incorrectScore += 1;
         newQuestion();
         timerStart();
     }
-}, 1000);
+}, 1000);;
 
+function timerStart() {
+    timerSeconds = 30;
+    timerCountdown.innerHTML = `<p>Timer: ${timerSeconds}</p>`;
 }
+
 
 // Create the new question and the answers
 function newQuestion() {
@@ -500,7 +500,6 @@ function newQuestion() {
  * and starts the timer in 30 seconds (countdown). 
  */
 function startRestart() {
-    console.log('here')
     // Remove rules
     let cleanRules = document.getElementById('rules-box');
     cleanRules.parentNode.removeChild(cleanRules);
