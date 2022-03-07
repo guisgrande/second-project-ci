@@ -313,131 +313,6 @@ let gramsToPounds = inputVal / 454;
 }
 }
 
-// converter.html functions
-
-// Global variables to converter.html page
-
-let valueIn = document.getElementById('value-base');
-let valueOut = document.getElementById('value-result');
-let convertCategory = document.getElementById('categories').value;
-let convertMetric1 = document.getElementById('metric-one');
-let convertMetric2 = document.getElementById('metric-two');
-
-/**
- * Change the options following the category selector. 
- */
- function convertCategoryMetrics() {
-
-    let categories = {
-    speed:['Miles per hour', 'KM per hour'],
-    temperature:['Celsius', 'Fahrenheit', 'Kelvin'],
-    time:['Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months', 'Years'],
-    scale:['Centimetres', 'Meters', 'Kilometers', 'Miles', 'Inches', 'Foot', 'Yards'],
-    weight:['Tonne', 'Kilos', 'Grams', 'Milligrams', 'Ounce', 'Pounds'],
-    };
-
-let c1 = document.getElementById('categories');
-let m1 = document.getElementById('metric-one');
-let m2 = document.getElementById('metric-two');
-
-c1.addEventListener('change', function(){
-
-    let selected_option = categories[this.value];
-
-    while(m1.options.length > 0) {
-        m1.options.remove(0);
-    }
-
-    Array.from(selected_option).forEach(function(el){
-
-        let option = new Option(el, el);
-
-        m1.appendChild(option);
-    });
-
-});
-c1.addEventListener('change', function(){
-
-    let selected_option = categories[this.value];
-
-    while(m2.options.length > 0) {
-        m2.options.remove(0);
-    }
-
-    Array.from(selected_option).forEach(function(el){
-
-        let option = new Option(el, el);
-
-        m2.appendChild(option);
-    });
-
-});
-
-}
-
-/**
- * Receives the value of metric 1 and returns the conversion for metric 2.
- */
-
-valueIn.addEventListener("keyup", convertFunction);
-convertMetric1.addEventListener("change", convertFunction);
-convertMetric2.addEventListener("change", convertFunction);
-
-function convertFunction() {
-    inputVal = valueIn.value;
-    convertCategory;
-    metric1 = convertMetric1.value;
-    metric2 = convertMetric2.value;
-
-    // Checks which category was selected and determines which function to call
-    if (convertCategory === 'speed') {
-        speedConvert(inputVal);
-    } else if (convertCategory === 'temperature') {
-        temperatureConvert(inputVal);
-    } else if (convertCategory === 'time') {
-        timeConvert(inputVal);
-    } else if (convertCategory === 'scale') {
-        scaleConvert(inputVal);
-    } else if (convertCategory === 'weight') {
-        weightConvert(inputVal);
-    };
-
-    valueOut.value = result;
-
-    console.log(result);
-    console.log(metric1);
-    console.log(metric2);
-    console.log(convertCategory);
-}
-
-/**
- * Exchanges metric 1 for metric 2.
- */
-function swapMetrics() {
-// hold variables get the value from input and metric selected, and chenge the positions.
-let holdValue1 = valueIn.value;
-let holdValue2 = valueOut.value;
-let holdMetric1 = convertMetric1.value;
-let holdMetric2 = convertMetric2.value;
-
-valueIn.value = holdValue2;
-valueOut.value = holdValue1;
-
-convertMetric1.value = holdMetric2;
-convertMetric2.value = holdMetric1;
-
-}
-
-/**
- * Clear all the values.
- */
-function clearMetrics() {
-
-valueIn.value = "";
-valueOut.value = "";
-
-}
-
 // quiz-game.html functions
 
 // Quiz-game global variables.
@@ -625,6 +500,7 @@ function newQuestion() {
  * and starts the timer in 30 seconds (countdown). 
  */
 function startRestart() {
+    console.log('here')
     // Remove rules
     let cleanRules = document.getElementById('rules-box');
     cleanRules.parentNode.removeChild(cleanRules);
@@ -643,12 +519,16 @@ function startRestart() {
 
 }
 
+document.getElementById('start-restart').addEventListener('click', startRestart);
+
 /**
  * Stop the game and shows the answers report.
  */
 function stopReport() {
 
 }
+
+document.getElementById('stop-report').addEventListener('click', stopReport);
 
 /**
  * Receives the player's answer,
@@ -667,7 +547,7 @@ function stopReport() {
 
 answeredA.onclick = () => {
 
-    if (valueA.value = result) {
+    if (valueA.value == result) {
         correctScore += 1;
         newQuestion();
         timerStart();
@@ -683,7 +563,7 @@ answeredA.onclick = () => {
 
 answeredB.onclick = () => {
 
-    if (valueB.value = result) {
+    if (valueB.value == result) {
         correctScore += 1;
         newQuestion();
         timerStart();
@@ -698,7 +578,7 @@ answeredB.onclick = () => {
 
 answeredC.onclick = () => {
 
-    if (valueC.value = result) {
+    if (valueC.value == result) {
         correctScore += 1;
         newQuestion();
         timerStart();
