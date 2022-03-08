@@ -400,8 +400,6 @@ function convertFunction() {
         alert("ERROR");
     };
 
-
-
 }
 
 valueIn.addEventListener("keyup", convertFunction);
@@ -412,18 +410,14 @@ convertMetric2.addEventListener("change", convertFunction);
  * Exchanges metric 1 for metric 2.
  */
 function swapMetrics() {
-// hold variables get the value from input and metric selected, and chenge the positions.
-    let holdValue1 = valueIn.value;
-    let holdValue2 = valueOut.value;
+// hold variables get the metric selected and chenge the positions, run convertFuntion againt to show the new result.
     let holdMetric1 = convertMetric1.value;
     let holdMetric2 = convertMetric2.value;
-
-    valueIn.value = holdValue2;
-    valueOut.value = holdValue1;
 
     convertMetric1.value = holdMetric2;
     convertMetric2.value = holdMetric1;
 
+    convertFunction();
 }
 
 document.getElementById('swap').addEventListener('click', swapMetrics);
@@ -436,11 +430,6 @@ function clearMetrics() {
     valueIn.value = "";
     valueOut.value = "";
 
-    console.log("INPUT: " + inputVal);
-    console.log("RESULT: " + result.value);
-    console.log("METRIC1: " + metric1);
-    console.log("METRIC2: " + metric2);
-    console.log("CATEGORY: " + convertCategoryValue);
 }
 
 document.getElementById('clear').addEventListener('click', clearMetrics);
