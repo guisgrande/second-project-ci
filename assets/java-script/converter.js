@@ -17,30 +17,30 @@ let weight = ['Tonne', 'Kilos', 'Grams', 'Milligrams', 'Ounce', 'Pounds'];
 // Speed base convertion
 function speedConvert() {
 if (metric1 === 'Miles per hour' && metric2 === 'KM per hour') {
-    result = inputVal * 1.609;
+    valueOut.value = Number(inputVal) * 1.609;
 } else if (metric1 === 'KM per hour' && metric2 === 'Miles per hour') {
-    result = inputVal / 1.609;
+    valueOut.value = Number(inputVal) / 1.609;
 } else {
-    result = inputVal * 1;
+    valueOut.value = Number(inputVal) * 1;
 }
 }
 
 // Temperature base convertion
 function temperatureConvert() {
 if (metric1 === 'Celsius' && metric2 === 'Fahrenheit') {
-    result = (inputVal * 1.8) + 32;
+    valueOut.value = (Number(inputVal) * 1.8) + 32;
 } else if (metric1 === 'Celsius' && metric2 ==='Kelvin') {
-    result = inputVal + 273.15;
+    valueOut.value = Number(inputVal) + 273.15;
 } else if (metric1 === 'Fahrenheit' && metric2 === 'Celsius') {
-    result = (inputVal - 32) * 0.55;
+    valueOut.value = (Number(inputVal) - 32) * 0.55;
 } else if (metric1 === 'Fahrenheit' && metric2 === 'Kelvin') {
-    result = (inputVal - 32) * 0.55 + 273.15;
+    valueOut.value = (Number(inputVal) - 32) * 0.55 + 273.15;
 } else if (metric1 === 'Kelvin' && metric2 === 'Celsius') {
-    result = inputVal - 273.15;
+    valueOut.value = Number(inputVal) - 273.15;
 } else if (metric1 === 'Kelvin' && metric2 === 'Fahrenheit') {
-    result = (inputVal - 273.15) * 1.8 + 32;
+    valueOut.value = (Number(inputVal) - 273.15) * 1.8 + 32;
 } else {
-    result = inputVal * 1;
+    valueOut.value = Number(inputVal) * 1;
 }
 }
 
@@ -48,97 +48,97 @@ if (metric1 === 'Celsius' && metric2 === 'Fahrenheit') {
 function timeConvert() {
 // seconds
 if (metric1 === 'Seconds' && metric2 === 'Minutes') {
-    result = inputVal / 60;
+    valueOut.value = Number(inputVal) / 60;
 } else if (metric1 === 'Seconds' && metric2 === 'Hours') {
-    result = inputVal / 3600;
+    valueOut.value = Number(inputVal) / 3600;
 } else if (metric1 === 'Seconds' && metric2 === 'Days') {
-    result = inputVal / 86400;
+    valueOut.value = Number(inputVal) / 86400;
 } else if (metric1 === 'Seconds' && metric2 === 'Weeks') {
-    result = inputVal / 604800;
+    valueOut.value = Number(inputVal) / 604800;
 } else if (metric1 === 'Seconds' && metric2 === 'Months') {
-    result = (inputVal / 3600) / 730;
+    valueOut.value = (Number(inputVal) / 3600) / 730;
 } else if (metric1 === 'Seconds' && metric2 === 'Years') {
-    result = (inputVal / 3600) / 8760;
+    valueOut.value = (Number(inputVal) / 3600) / 8760;
 // minutes
 } else if (metric1 === 'Minutes' && metric2 === 'Seconds') {
-    result = inputVal * 60;
+    valueOut.value = Number(inputVal) * 60;
 } else if (metric1 === 'Minutes' && metric2 === 'Hours') {
-    result = inputVal / 60;
+    valueOut.value = Number(inputVal) / 60;
 } else if (metric1 === 'Minutes' && metric2 === 'Days') {
-    result = inputVal / 1440;
+    valueOut.value = Number(inputVal) / 1440;
 } else if (metric1 === 'Minutes' && metric2 === 'Weeks') {
-    result = inputVal / 10080;
+    valueOut.value = Number(inputVal) / 10080;
 } else if (metric1 === 'Minutes' && metric2 === 'Months') {
-    result = (inputVal / 60) / 730;
+    valueOut.value = (Number(inputVal) / 60) / 730;
 } else if (metric1 === 'Minutes' && metric2 === 'Years') {
-    result = (inputVal / 60) / 8760;
+    valueOut.value = (Number(inputVal) / 60) / 8760;
 // hours
 } else if (metric1 === 'Hours' && metric2 === 'Seconds') {
-    result = inputVal * 3600;
+    valueOut.value = Number(inputVal) * 3600;
 } else if (metric1 === 'Hours' && metric2 === 'Minutes') {
-    result = inputVal * 60;
+    valueOut.value = Number(inputVal) * 60;
 } else if (metric1 === 'Hours' && metric2 === 'Days') {
-    result = inputVal / 24;
+    valueOut.value = Number(inputVal) / 24;
 } else if (metric1 === 'Hours' && metric2 === 'Weeks') {
-    result = inputVal / 168;
+    valueOut.value = Number(inputVal) / 168;
 } else if (metric1 === 'Hours' && metric2 === 'Months') {
-    result = inputVal / 730;
+    valueOut.value = Number(inputVal) / 730;
 } else if (metric1 === 'Hours' && metric2 === 'Years') {
-    result = inputVal / 8760;
+    valueOut.value = Number(inputVal) / 8760;
 // days
 } else if (metric1 === 'Days' && metric2 === 'Seconds') {
-    result = inputVal * 86400;
+    valueOut.value = Number(inputVal) * 86400;
 } else if (metric1 === 'Days' && metric2 === 'Minutes') {
-    result = inputVal * 1440;
+    valueOut.value = Number(inputVal) * 1440;
 } else if (metric1 === 'Days' && metric2 === 'Hours') {
-    result = inputVal * 24;
+    valueOut.value = Number(inputVal) * 24;
 } else if (metric1 === 'Days' && metric2 === 'Weeks') {
-    result = inputVal / 7;
+    valueOut.value = Number(inputVal) / 7;
 } else if (metric1 === 'Days' && metric2 === 'Months') {
-    result = inputVal / 30.41;
+    valueOut.value = Number(inputVal) / 30.41;
 } else if (metric1 === 'Days' && metric2 === 'Years') {
-    result = inputVal / 365;
+    valueOut.value = Number(inputVal) / 365;
 //  weeks
 } else if (metric1 === 'Weeks' && metric2 === 'Seconds') {
-    result = inputVal * 604800;
+    valueOut.value = Number(inputVal) * 604800;
 } else if (metric1 === 'Weeks' && metric2 === 'Minutes') {
-    result = inputVal * 10080;
+    valueOut.value = Number(inputVal) * 10080;
 } else if (metric1 === 'Weeks' && metric2 === 'Hours') {
-    result = inputVal * 168;
+    valueOut.value = Number(inputVal) * 168;
 } else if (metric1 === 'Weeks' && metric2 === 'Days') {
-    result = inputVal * 7;
+    valueOut.value = Number(inputVal) * 7;
 } else if (metric1 === 'Weeks' && metric2 === 'Months') {
-    result = inputVal / 4.345;
+    valueOut.value = Number(inputVal) / 4.345;
 } else if (metric1 === 'Weeks' && metric2 === 'Years') {
-    result = inputVal / 52.143;
+    valueOut.value = Number(inputVal) / 52.143;
 // months
 } else if (metric1 === 'Months' && metric2 === 'Seconds') {
-    result = (inputVal * 730) * 3600;
+    valueOut.value = (Number(inputVal) * 730) * 3600;
 } else if (metric1 === 'Months' && metric2 === 'Minutes') {
-    result = (inputVal * 730) * 60;
+    valueOut.value = (Number(inputVal) * 730) * 60;
 } else if (metric1 === 'Months' && metric2 === 'Hours') {
-    result = inputVal * 730;
+    valueOut.value = Number(inputVal) * 730;
 } else if (metric1 === 'Months' && metric2 === 'Days') {
-    result = inputVal * 30.41;
+    valueOut.value = Number(inputVal) * 30.41;
 } else if (metric1 === 'Months' && metric2 === 'Weeks') {
-    result = inputVal * 345;
+    valueOut.value = Number(inputVal) * 345;
 } else if (metric1 === 'Months' && metric2 === 'Years') {
-    result = inputVal / 12;
+    valueOut.value = Number(inputVal) / 12;
 // years
 } else if (metric1 === 'Years' && metric2 === 'Seconds') {
-    result = (inputVal * 365) * 86400;
+    valueOut.value = (Number(inputVal) * 365) * 86400;
 } else if (metric1 === 'Years' && metric2 === 'Minutes') {
-    result = (inputVal * 365) * 1440;
+    valueOut.value = (Number(inputVal) * 365) * 1440;
 } else if (metric1 === 'Years' && metric2 === 'Hours') {
-    result = inputVal * 8760;
+    valueOut.value = Number(inputVal) * 8760;
 } else if (metric1 === 'Years' && metric2 === 'Days') {
-    result = inputVal * 365;
+    valueOut.value = Number(inputVal) * 365;
 } else if (metric1 === 'Years' && metric2 === 'Weeks') {
-    result = inputVal * 52.143;
+    valueOut.value = Number(inputVal) * 52.143;
 } else if (metric1 === 'Years' && metric2 === 'Months') {
-    result = inputVal * 12;
+    valueOut.value = Number(inputVal) * 12;
 } else {
-    result = inputVal *1;
+    valueOut.value = Number(inputVal) *1;
 }
 }
 
@@ -146,97 +146,98 @@ if (metric1 === 'Seconds' && metric2 === 'Minutes') {
 function scaleConvert() {
 // centimeters
 if (metric1 === 'Centimeters' && metric2 === 'Meters') {
-    result = inputVal / 100;
+    valueOut.value = Number(inputVal) / 100;
 } else if (metric1 === 'Centimeters' && metric2 === 'Kilometers') {
-    result = inputVal / 100000;
+    valueOut.value = Number(inputVal) / 100000;
 } else if (metric1 === 'Centimeters' && metric2 === 'Miles') {
-    result = inputVal / 160934;
+    valueOut.value = Number(inputVal) / 160934;
 } else if (metric1 === 'Centimeters' && metric2 === 'Inches') {
-    result = inputVal / 2.54;
+    valueOut.value = Number(inputVal) / 2.54;
 } else if (metric1 === 'Centimeters' && metric2 === 'Foot') {
-    result = inputVal / 30.48;
+    valueOut.value = Number(inputVal) / 30.48;
 } else if (metric1 === 'Centimeters' && metric2 === 'Yards') {
-    result = inputVal / 91.44;
+    valueOut.value = Number(inputVal) / 91.44;
 // meters
 } else if (metric1 === 'Meters' && metric2 === 'Centimeters') {
-    result = inputVal * 100;
+    valueOut.value = Number(inputVal) * 100;
 } else if (metric1 === 'Meters' && metric2 === 'Kilometers') {
-    result = inputVal / 1000;
+    valueOut.value = Number(inputVal) / 1000;
 } else if (metric1 === 'Meters' && metric2 === 'Miles') {
-    result = inputVal / 1609;
+    valueOut.value = Number(inputVal) / 1609;
 } else if (metric1 === 'Meters' && metric2 === 'Inches') {
-    result = inputVal * 39.37;
+    valueOut.value = Number(inputVal) * 39.37;
 } else if (metric1 === 'Meters' && metric2 === 'Foot') {
-    result = inputVal * 3.281;
+    valueOut.value = Number(inputVal) * 3.281;
 } else if (metric1 === 'Meters' && metric2 === 'Yards') {
-    result = inputVal * 1.094;
+    valueOut.value = Number(inputVal) * 1.094;
 // kilometers
 } else if (metric1 === 'Kilometers' && metric2 === 'Centimeters') {
-    result = inputVal * 100000;
+    valueOut.value = Number(inputVal) * 100000;
 } else if (metric1 === 'Kilometers' && metric2 === 'Meters') {
-    result = inputVal * 1000;
+    valueOut.value = Number(inputVal) * 1000;
 } else if (metric1 === 'Kilometers' && metric2 === 'Miles') {
-    result = inputVal / 1.609;
+    valueOut.value = Number(inputVal) / 1.609;
 } else if (metric1 === 'Kilometers' && metric2 === 'Inches') {
-    result = inputVal * 39370;
+    valueOut.value = Number(inputVal) * 39370;
 } else if (metric1 === 'Kilometers' && metric2 === 'Foot') {
-    result = inputVal * 3281;
+    valueOut.value = Number(inputVal) * 3281;
 } else if (metric1 === 'Kilometers' && metric2 === 'Yards') {
-    result = inputVal * 1094;
+    valueOut.value = Number(inputVal) * 1094;
 // miles
 } else if (metric1 === 'Miles' && metric2 === 'Centimeters') {
-    result = inputVal * 160934;
+    valueOut.value = Number(inputVal) * 160934;
 } else if (metric1 === 'Miles' && metric2 === 'Meters') {
-    result = inputVal * 1609;
+    valueOut.value = Number(inputVal) * 1609;
 } else if (metric1 === 'Miles' && metric2 === 'Kilometers') {
-    result = inputVal * 1.609;
+    valueOut.value = Number(inputVal) * 1.609;
 } else if (metric1 === 'Miles' && metric2 === 'Inches') {
-    result = inputVal * 63360;
+    valueOut.value = Number(inputVal) * 63360;
 } else if (metric1 === 'Miles' && metric2 === 'Foot') {
-    result = inputVal * 5280;
+    valueOut.value = Number(inputVal) * 5280;
 } else if (metric1 === 'Miles' && metric2 === 'Yards') {
-    result = inputVal * 1760;
+    valueOut.value = Number(inputVal) * 1760;
 // inches
 } else if (metric1 === 'Inches' && metric2 === 'Centimeters') {
-    result = inputVal * 2.54;
+    valueOut.value = Number(inputVal) * 2.54;
 } else if (metric1 === 'Inches' && metric2 === 'Meters') {
-    result = inputVal / 39.37;
+    valueOut.value = Number(inputVal) / 39.37;
 } else if (metric1 === 'Inches' && metric2 === 'Kilometers') {
-    result = inputVal / 39370;
+    valueOut.value = Number(inputVal) / 39370;
 } else if (metric1 === 'Inches' && metric2 === 'Miles') {
-    result = inputVal / 63360;
+    valueOut.value = Number(inputVal) / 63360;
 } else if (metric1 === 'Inches' && metric2 === 'Foot') {
-    result = inputVal / 12;
+    valueOut.value = Number(inputVal) / 12;
 } else if (metric1 === 'Inches' && metric2 === 'Yards') {
-    result = inputVal / 36;
+    valueOut.value = Number(inputVal) / 36;
 // foot
 } else if (metric1 === 'Foot' && metric2 === 'Centimeters') {
-    result = inputVal * 30.48;
+    valueOut.value = Number(inputVal) * 30.48;
 } else if (metric1 === 'Foot' && metric2 === 'Meters') {
-    result =  inputVal / 3.281;
+    valueOut.value =  Number(inputVal) / 3.281;
 } else if (metric1 === 'Foot' && metric2 === 'Kilometers') {
-    result = inputVal / 3281;
+    valueOut.value = Number(inputVal) / 3281;
 } else if (metric1 === 'Foot' && metric2 === 'Miles') {
-    result = inputVal / 5280;
+    valueOut.value = Number(inputVal) / 5280;
 } else if (metric1 === 'Foot' && metric2 === 'Inches') {
-    result = inputVal * 12;
+    valueOut.value = Number(inputVal) * 12;
 } else if (metric1 === 'Foot' && metric2 === 'Yards') {
-    result = inputVal / 3;
+    valueOut.value = inputNumber(inputVal) / 3;
 // yards
 } else if (metric1 === 'Yards' && metric2 === 'Centimeters') {
-    result = inputVal * 91.44;
+    valueOut.value = Number(inputVal) * 91.44;
 } else if (metric1 === 'Yards' && metric2 === 'Meters') {
-    result = inputVal / 1.094;
+    valueOut.value = Number(inputVal) / 1.094;
 } else if (metric1 === 'Yards' && metric2 === 'Kilometers') {
-    result = inputVal / 1094;
+    valueOut.value = Number(inputVal) / 1094;
 } else if (metric1 === 'Yards' && metric2 === 'Miles') {
-    result = inputVal / 1760;
+    valueOut.value = Number(inputVal) / 1760;
 } else if (metric1 === 'Yards' && metric2 === 'Inches') {
-    result = inputVal * 36;
+    valueOut.value = Number(inputVal) * 36;
 } else if (metric1 === 'Yards' && metric2 === 'Foot'){
-    result = inputVal * 3;
+    valueOut.value = Number(inputVal) * 3;
 } else {
-    result = inputVal * 1;
+    valueOut.value = Number(inputVal) * 1;
+    console.log('ERROR');
 }
 }
 
@@ -244,72 +245,73 @@ if (metric1 === 'Centimeters' && metric2 === 'Meters') {
 function weightConvert() {
 // tonne
 if (metric1 === 'Tonne' && metric2 === 'Kilos') {
-    result = inputVal * 1000;
+    valueOut.value = Number(inputVal) * 1000;
 } else if (metric1 === 'Tonne' && metric2 === 'Grams') {
-    result = (inputVal * 1000) * 1000;
+    valueOut.value = (Number(inputVal) * 1000) * 1000;
 } else if (metric1 === 'Tonne' && metric2 === 'Milligrams') {
-    result = (inputVal * 1000) * 1000000;
+    valueOut.value = (Number(inputVal) * 1000) * 1000000;
 } else if (metric1 === 'Tonne' && metric2 === 'Ounce') {
-    result = inputVal * 35274;
+    valueOut.value = Number(inputVal) * 35274;
 } else if (metric1 === 'Tonne' && metric2 === 'Pounds') {
-    result = inputVal * 2205;
+    valueOut.value = Number(inputVal) * 2205;
 // kilos
 } else if (metric1 === 'Kilos' && metric2 === 'Tonne') {
-    result = inputVal / 1000;
+    valueOut.value = Number(inputVal) / 1000;
 } else if (metric1 === 'Kilos' && metric2 === 'Grams') {
-    results = inputVal * 1000;
+    valueOut.value = Number(inputVal) * 1000;
 } else if (metric1 === 'Kilos' && metric2 === 'Milligrams') {
-    results = (inputVal * 1000) * 1000;
+    valueOut.value = (Number(inputVal) * 1000) * 1000;
 } else if (metric1 === 'Kilos' && metric2 === 'Ounce') {
-    result = inputVal * 35.275;
+    valueOut.value = Number(inputVal) * 35.275;
 } else if (metric1 === 'Kilos' && metric2 === 'Pounds') {
-    result = inputVal * 2.205;
+    valueOut.value = Number(inputVal) * 2.205;
 // grams
 } else if (metric1 === 'Grams' && metric2 === 'Tonne') {
-    result = (inputVal / 1000) / 1000;
+    valueOut.value = (Number(inputVal) / 1000) / 1000;
 } else if (metric1 === 'Grams' && metric2 === 'Kilos') {
-    result = inputVal / 1000;
+    valueOut.value = Number(inputVal) / 1000;
 } else if (metric1 === 'Grams' && metric2 === 'Milligrams') {
-    result = inputVal * 1000;
+    valueOut.value = Number(inputVal) * 1000;
 } else if (metric1 === 'Grams' && metric2 === 'Ounce') {
-    result = inputVal / 28.35;
+    valueOut.value = Number(inputVal) / 28.35;
 } else if (metric1 === 'Grams' && metric2 === 'Pounds') {
-let gramsToPounds = inputVal / 454;
+    valueOut.value = Number(inputVal) / 454;
 // milligrams
 } else if (metric1 === 'Milligrams' && metric2 === 'Tonne') {
-    result = (inputVal / 1000) / 1000000;
+    valueOut.value = (Number(inputVal) / 1000) / 1000000;
 } else if (metric1 === 'Milligrams' && metric2 === 'Kilos') {
-    result = (inputVal / 1000) / 1000;
+    valueOut.value = (Number(inputVal) / 1000) / 1000;
 } else if (metric1 === 'Milligrams' && metric2 === 'Grams') {
-    result = inputVal / 1000;
+    valueOut.value = Number(inputVal) / 1000;
 } else if (metric1 === 'Milligrams' && metric2 === 'Ounce') {
-    result = inputVal / 28350;
+    valueOut.value = Number(inputVal) / 28350;
 } else if (metric1 === 'Milligrams' && metric2 === 'Pounds') {
-    result = inputVal / 453592;
+    valueOut.value = Number(inputVal) / 453592;
 // ounce
 } else if (metric1 === 'Ounce' && metric2 === 'Tonne') {
-    result = inputVal / 35274;
+    valueOut.value = Number(inputVal) / 35274;
 } else if (metric1 === 'Ounce' && metric2 === 'Kilos') {
-    result = inputVal / 35.274;
+    valueOut.value = Number(inputVal) / 35.274;
 } else if (metric1 === 'Ounce' && metric2 === 'Grams') {
-    result = inputVal * 28.35;
+    valueOut.value = Number(inputVal) * 28.35;
 } else if (metric1 === 'Ounce' && metric2 === 'Milligrams') {
-    result = inputVal * 28350;
+    valueOut.value = Number(inputVal) * 28350;
 } else if (metric1 === 'Ounce' && metric2 === 'Pounds') {
-    result = inputVal / 16;
+    valueOut.value = Number(inputVal) / 16;
 // pounds
 } else if (metric1 === 'Pounds' && metric2 === 'Tonne') {
-    result = inputVal / 2205;
+    valueOut.value = Number(inputVal) / 2205;
 } else if (metric1 === 'Pounds' && metric2 === 'Kilos') {
-    result = inputVal / 2.205;
+    valueOut.value = Number(inputVal) / 2.205;
 } else if (metric1 === 'Pounds' && metric2 === 'Grams') {
-    result = inputVal * 454;
+    valueOut.value = Number(inputVal * 454);
 } else if (metric1 === 'Pounds' && metric2 === 'Milligrams') {
-    result = inputVal * 453592;
+    valueOut.value = Number(inputVal * 453592);
 } else if (metric1 === 'Pounds' && metric2 === 'Ounce') {
-    result = inputVal * 16;
+    valueOut.value = Number(inputVal * 16);
 } else {
-    result = inputVal * 1;
+    valueOut.value = Number(inputVal * 1);
+    console.log("ERROR")
 }
 }
 
@@ -318,9 +320,14 @@ let gramsToPounds = inputVal / 454;
 // Global variables to converter.html page
 let valueIn = document.getElementById('value-base');
 let valueOut = document.getElementById('value-result');
-let convertCategory = document.getElementById('categories').value;
+let convertCategory = document.getElementById('categories');
 let convertMetric1 = document.getElementById('metric-one');
 let convertMetric2 = document.getElementById('metric-two');
+let convertMetricValue1, convertMetricValue2, convertCategoryValue;
+
+convertMetricValue1 = convertMetric1.value;
+convertMetricValue2 = convertMetric2.value;
+convertCategoryValue = convertCategory.value;
 
 /**
  * Change the options following the category selector. 
@@ -329,44 +336,40 @@ const categories_list = {
     speed:['Miles per hour', 'KM per hour'],
     temperature:['Celsius', 'Fahrenheit', 'Kelvin'],
     time:['Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months', 'Years'],
-    scale:['Centimetres', 'Meters', 'Kilometers', 'Miles', 'Inches', 'Foot', 'Yards'],
+    scale:['Centimeters', 'Meters', 'Kilometers', 'Miles', 'Inches', 'Foot', 'Yards'],
     weight:['Tonne', 'Kilos', 'Grams', 'Milligrams', 'Ounce', 'Pounds'],
 
 };
 
-let c1 = document.getElementById('categories');
-let m1 = document.getElementById('metric-one');
-let m2 = document.getElementById('metric-two');
-
-c1.addEventListener('change', function(){
+convertCategory.addEventListener('change', function(){
     console.log('here')
     let selected_option = categories_list[this.value];
 
-    while(m1.options.length > 0) {
-        m1.options.remove(0);
+    while(convertMetric1.options.length > 0) {
+        convertMetric1.options.remove(0);
     }
 
     Array.from(selected_option).forEach(function(el){
 
         let option = new Option(el, el);
 
-        m1.appendChild(option);
+        convertMetric1.appendChild(option);
     });
 
 });
-c1.addEventListener('change', function(){
+convertCategory.addEventListener('change', function(){
 
     let selected_option = categories_list[this.value];
 
-    while(m2.options.length > 0) {
-        m2.options.remove(0);
+    while(convertMetric2.options.length > 0) {
+        convertMetric2.options.remove(0);
     }
 
     Array.from(selected_option).forEach(function(el){
 
         let option = new Option(el, el);
 
-        m2.appendChild(option);
+        convertMetric2.appendChild(option);
     });
 
 });
@@ -376,29 +379,29 @@ c1.addEventListener('change', function(){
  */
 function convertFunction() {
     inputVal = valueIn.value;
-    convertCategory;
-    metric1 = convertMetric1.value;
-    metric2 = convertMetric2.value;
+    convertCategoryValue = convertCategory.value;
+    convertMetricValue1 = convertMetric1.value;
+    convertMetricValue2 = convertMetric2.value;
+    metric1 = convertMetricValue1;
+    metric2 = convertMetricValue2;
 
     // Checks which category was selected and determines which function to call
-    if (convertCategory === 'speed') {
+    if (convertCategoryValue === 'speed') {
         speedConvert(inputVal);
-    } else if (convertCategory === 'temperature') {
+    } else if (convertCategoryValue === 'temperature') {
         temperatureConvert(inputVal);
-    } else if (convertCategory === 'time') {
+    } else if (convertCategoryValue === 'time') {
         timeConvert(inputVal);
-    } else if (convertCategory === 'scale') {
+    } else if (convertCategoryValue === 'scale') {
         scaleConvert(inputVal);
-    } else if (convertCategory === 'weight') {
+    } else if (convertCategoryValue === 'weight') {
         weightConvert(inputVal);
+    } else {
+        alert("ERROR");
     };
 
-    valueOut.value = result;
 
-    console.log(result);
-    console.log(metric1);
-    console.log(metric2);
-    console.log(convertCategory);
+
 }
 
 valueIn.addEventListener("keyup", convertFunction);
@@ -433,6 +436,11 @@ function clearMetrics() {
     valueIn.value = "";
     valueOut.value = "";
 
+    console.log("INPUT: " + inputVal);
+    console.log("RESULT: " + result.value);
+    console.log("METRIC1: " + metric1);
+    console.log("METRIC2: " + metric2);
+    console.log("CATEGORY: " + convertCategoryValue);
 }
 
 document.getElementById('clear').addEventListener('click', clearMetrics);
