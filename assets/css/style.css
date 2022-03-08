@@ -104,7 +104,7 @@ footer a:hover {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #022B3A;
+    background-image: linear-gradient(#1F7A8C, #022B3A, #022B3A, #1F7A8C);
     border-radius: 10px;
     box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.35), 0 7px 22px 0 rgba(0, 0, 0, 0.15);
 }
@@ -113,8 +113,8 @@ footer a:hover {
 
 .selection-options a {
     text-decoration: none;
-    color: #BFDBF7;
-    text-shadow: 1px 1px 2px black;
+    color: black;
+    text-shadow: 0 0 5px white, 1px 1px 4px #BFDBF7;
 }
 
 .selection-options i {
@@ -129,7 +129,7 @@ footer a:hover {
 
 .selection-options a:hover {
     color: white;
-    text-shadow: 0 0 5px black, 0 0 4px #BFDBF7;
+    text-shadow: 0 0 5px black, 2px 2px 4px rgb(37, 37, 37);
 }
 
 /* converter.html style */
