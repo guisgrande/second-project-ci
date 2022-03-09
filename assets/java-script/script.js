@@ -3,17 +3,38 @@ let inputVal = 0;
 let result = 0;
 let metric1 = "";
 let metric2 = "";
+let correctScore = 0;
+let incorrectScore = 0;
+let questionNumb = 0;
 
+// categories and metrics arrays
 let categories = ['speed', 'temperature', 'time', 'scale', 'weight'];
-
 let speed = ['Miles per hour', 'KM per hour'];
 let temperature = ['Celsius', 'Fahrenheit', 'Kelvin'];
 let time = ['Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months', 'Years'];
 let scale = ['Centimetres', 'Meters', 'Kilometers', 'Miles', 'Inches', 'Foot', 'Yards'];
 let weight = ['Tonne', 'Kilos', 'Grams', 'Milligrams', 'Ounce', 'Pounds'];
 
-// Metrics functions for each category, using if/else to verify the metrics.
+let rulesBox = document.getElementById('rules-box');
+let correctDisplay = document.getElementById('correct-score');
+let incorrectDisplay = document.getElementById('incorrect-score');
+let questionCounter = document.getElementById('question-counter');
+let questionDescription = document.getElementById('question-diplay');
 
+// get elements of answers - div and paragraph elements.
+let letterA = document.getElementById('option-a');
+let letterB = document.getElementById('option-b');
+let letterC = document.getElementById('option-c');
+
+let answeredA = document.getElementById('answer-a');
+let answeredB = document.getElementById('answer-b');
+let answeredC = document.getElementById('answer-c');
+
+let answerA = document.getElementById('show-answer-a');
+let answerB = document.getElementById('show-answer-b');
+let answerC = document.getElementById('show-answer-c');
+
+// Metrics functions for each category, using if/else to verify the metrics.
 // Speed base convertion
 function speedConvert() {
 if (metric1 === 'Miles per hour' && metric2 === 'KM per hour') {
@@ -274,7 +295,7 @@ if (metric1 === 'Tonne' && metric2 === 'Kilos') {
 } else if (metric1 === 'Grams' && metric2 === 'Ounce') {
     result = inputVal / 28.35;
 } else if (metric1 === 'Grams' && metric2 === 'Pounds') {
-let gramsToPounds = inputVal / 454;
+    result = inputVal / 454;
 // milligrams
 } else if (metric1 === 'Milligrams' && metric2 === 'Tonne') {
     result = (inputVal / 1000) / 1000000;
@@ -315,18 +336,7 @@ let gramsToPounds = inputVal / 454;
 
 // quiz-game.html functions
 
-// Quiz-game global variables.
-let correctDisplay = document.getElementById('correct-score');
-let incorrectDisplay = document.getElementById('incorrect-score');
-let correctScore = 0;
-let incorrectScore = 0;
-let questionNumb = 0;
-
-let answerA = document.getElementById('show-answer-a');
-let answerB = document.getElementById('show-answer-b');
-let answerC = document.getElementById('show-answer-c');
-
-// Timer function
+// Timer variables and function
 let timerSeconds = "--";
 let timerCountdown = document.getElementById('timer');
 let timerDecres = setInterval (()=>{
@@ -344,20 +354,8 @@ function timerStart() {
     timerCountdown.innerHTML = `<p>Timer: ${timerSeconds}</p>`;
 }
 
-
 // Create the new question and the answers
 function newQuestion() {
-
-    // Check the rules - 8 wrong answer and 15 question total.
-    if (incorrectScore >= 8) {
-        alert("Ops, you lose! You scored 8 incorrect answers. Try again!")
-        // stopReport();
-    } else if (questionNumb >= 15) {
-        alert("End game! Check your results!")
-        // stopReport();
-    } else {
-        console.log("Question Nº" + (questionNumb + 1))
-    }
 
     // Random number to the question, 1 to 101.
     let randomNumb = Math.floor(Math.random() * 100 + 1)
@@ -405,18 +403,16 @@ function newQuestion() {
 
     // Question number counter
     questionNumb += 1;
-    let questionCounter = document.getElementById('question-counter');
     questionCounter.innerHTML = `Question ${questionNumb} of 15 | Category ${randomCategory}`;
 
     // Question display
-    let questionDescription = document.getElementById('question-diplay');
     questionDescription.innerHTML = `${randomNumb} ${randomMetric1} corresponds to how many ${randomMetric2}?`;
 
     // Score counter update
     correctDisplay.innerHTML = `<p>Correct Answers: ${correctScore}</p>`
     incorrectDisplay.innerHTML = `<p>Incorrect Answers: ${incorrectScore}</p>`
 
-    // Quesiton generator
+    // Answers generator
     inputVal = randomNumb;
     metric1 = randomMetric1;
     metric2 = randomMetric2;
@@ -460,9 +456,7 @@ function newQuestion() {
         wrongAnswer1 = correctAnswer - 1;
     };
 
-
-
-    // To randomly choose the answer option
+    // To randomly choose the answer option for the correct answer, every question change the position of the correct answer.
     let randomQuestion = [correctAnswer, wrongAnswer1, wrongAnswer2];
     let randomA = randomQuestion[Math.floor(Math.random() * randomQuestion.length)];
     randomA;
@@ -481,12 +475,16 @@ function newQuestion() {
     answerB.innerHTML = `${randomB}`;
     answerC.innerHTML = `${randomC}`;
 
-    console.log(result);
-
-    console.log('Option A ' + answerA.innerText);
-    console.log('Option B ' + answerB.innerText);
-    console.log('Option C ' + answerC.innerText);
-
+    // Check the rules - 8 wrong answer and 15 question total.
+    if (incorrectScore >= 8) {
+        alert("Ops, you lose! You scored 8 incorrect answers. Try again!")
+        stopReport();
+    } else if (questionNumb >= 15) {
+        alert("End game! Check your results!")
+        stopReport();
+    } else {
+        console.log("Question Nº" + (questionNumb + 1))
+    }
 }
 
 /**
@@ -496,14 +494,22 @@ function newQuestion() {
  */
 function startRestart() {
     // Remove rules
-    let cleanRules = document.getElementById('rules-box');
-    cleanRules.parentNode.removeChild(cleanRules);
+    rulesBox.setAttribute('hidden', 'hidden');
+
+    // show answers boxes
+    letterA.removeAttribute('hidden');
+    letterB.removeAttribute('hidden');
+    letterC.removeAttribute('hidden');
+    answeredA.removeAttribute('hidden');
+    answeredB.removeAttribute('hidden');
+    answeredC.removeAttribute('hidden');
 
     // Reset the counters to zero
     correctScore = 0;
     incorrectScore = 0;
-    let correctReset = document.getElementById('correct-score').innerHTML = `<p>Correct Answers: ${correctScore}</p>`;
-    let incorrectReset = document.getElementById('incorrect-score').innerHTML = `<p>Incorrect Answers: ${incorrectScore}</p>`;
+    questionNumb = 0;
+    correctDisplay.innerHTML = `<p>Correct Answers: ${correctScore}</p>`;
+    incorrectDisplay.innerHTML = `<p>Incorrect Answers: ${incorrectScore}</p>`;
 
     // Start the timer
     timerStart();
@@ -519,7 +525,26 @@ document.getElementById('start-restart').addEventListener('click', startRestart)
  * Stop the game and shows the answers report.
  */
 function stopReport() {
+    timerSeconds = '--';
 
+    if (questionNumb == 15) {
+    questionCounter.innerHTML = `Total answered was ${questionNumb} of 15 questions | END GAME`;
+    } else {
+    questionNumb -= 1;
+    questionCounter.innerHTML = `Total answered was ${questionNumb} of 15 questions | END GAME`;   
+    }
+
+    questionDescription.innerHTML = `Congratulations! Well done, check your results`;
+
+    letterA.setAttribute('hidden', 'hidden');
+    letterB.setAttribute('hidden', 'hidden');
+    letterC.setAttribute('hidden', 'hidden');
+    answeredA.setAttribute('hidden', 'hidden');
+    answeredB.setAttribute('hidden', 'hidden');
+    answeredC.setAttribute('hidden', 'hidden');
+
+    rulesBox.removeAttribute('hidden');
+    
 }
 
 document.getElementById('stop-report').addEventListener('click', stopReport);
@@ -530,10 +555,6 @@ document.getElementById('stop-report').addEventListener('click', stopReport);
  * shows the next question and answers,
  * restarts the counter at 30 seconds.
  */
-// get the divs of answers options
- let answeredA = document.getElementById('answer-a');
- let answeredB = document.getElementById('answer-b');
- let answeredC = document.getElementById('answer-c');
 
 answeredA.onclick = () => {
 
