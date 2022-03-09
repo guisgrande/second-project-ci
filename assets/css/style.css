@@ -195,10 +195,16 @@ footer a:hover {
 }
 
 /* quiz-game.html style */
-
 #quiz-game {
     display: flex;
-    justify-content: center;
+    justify-content: center;  
+}
+
+#quiz-game-container {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid gold;
+    background: linear-gradient(goldenrod, white, goldenrod, rgb(156, 112, 0), goldenrod)
 }
 
 #quiz-game-container h2 {
@@ -208,6 +214,7 @@ footer a:hover {
 
 #quiz-game-title h2 {
     text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
 }
 
 /* Scores counters style */
@@ -217,33 +224,48 @@ footer a:hover {
     justify-content: space-between;
 }
 
+#correct-score {
+    background-color: rgb(2, 85, 2);
+}
+
+#incorrect-score {
+    background-color: rgb(110, 9, 9);
+}
+
 .score {
-    margin: 2px;
+    margin: 5px;
     padding: 2px;
-    background-color: #1F7A8C;
-    width: 130px;
+    width: 140px;
+    height: 25px;
     border-radius: 5px;
+    border: 1px solid black;
 }
 
 .score p {
     font-weight: bold;
-    font-size: 12px;
+    font-size: 13px;
     text-align: right;
-    margin: 2px;
+    margin: 3px;
+    color: white;
 }
 
 /* Timer counter style */
 #timer {
     width: 75px;
+    height: 75px;
     background-color: #022B3A;
     color: white;
     border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
 }
 
 #timer p {
     font-size: 14px;
     font-weight: bold;
     padding: 5px;
+    text-align: center;
 }
 
 /* Questions box style */
@@ -291,6 +313,7 @@ footer a:hover {
 
 .answer-option p {
     margin: 10px 10px 10px 25px;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -364,7 +387,7 @@ footer a:hover {
 }
 
 #actions-box button:hover {
-    background-color: #BFDBF7;
+    background-color: white;
     box-shadow: 2px 2px 4px black;
 }
 
@@ -429,6 +452,10 @@ footer a:hover {
 
     #questions-box {
         width: 380px;
+    }
+
+    .answer-option p {
+        font-size: 12px;
     }
 }
 
