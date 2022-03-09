@@ -25,7 +25,7 @@
     </header>
 
     <section id="converter">
-        <div id="converter-container">
+        <div id="converter-container" class="effect-shadow">
             <div id="converter-title">
                 <h2>Converter</h2>
                 <p>Chose a category, choose the two metrics and place the desired value.</p>
@@ -33,7 +33,7 @@
             <div>
                 <div id="category-selector-box">
                     <div id="category-icon"></div>
-                    <select name="category-list" id="categories">
+                    <select name="category-list" id="categories" class="effect-shadow">
                         <option>~ Choose a category ~</option>
                         <option value="scale">Scale</option>
                         <option value="weight">Weight</option>
@@ -43,23 +43,23 @@
                     </select>
                 </div>
                 <div id="value-box" class="terminal">
-                    <input id="value-base" type="text" placeholder="Input">
-                    <select name="metric-one" id="metric-one" class="metric-select">
+                    <input id="value-base" type="text" placeholder="Input" class="effect-shadow">
+                    <select name="metric-one" id="metric-one" class="metric-select effect-shadow">
                     </select>
                 </div>
                 <div id="actions-box">
                     <div class="action-box">
-                        <button id="swap" class="button"><img src="assets/images/icon-swap.png" alt="Swap icon button image" width="40px" height="40px"></button>
+                        <button id="swap" class="button"><img src="assets/images/icon-swap.png" alt="Swap icon button image" width="35px" height="35px"></button>
                         <p class="button-text">Swap</p>
                     </div>
                     <div class="action-box">
-                        <button id="clear" class="button"><img src="assets/images/icon-clear.png" alt="Clear icon button image" width="40px" height="40px"></button>
+                        <button id="clear" class="button"><img src="assets/images/icon-clear.png" alt="Clear icon button image" width="35px" height="35px"></button>
                         <p class="button-text">Clear</p>
                     </div>
                 </div>
                 <div id="converter-answer-box" class="terminal">
-                    <input id="value-result" type="text" placeholder="Result" disabled>
-                    <select name="metric-two" id="metric-two" class="metric-select">
+                    <input id="value-result" type="text" placeholder="Result" class="effect-shadow" disabled>
+                    <select name="metric-two" id="metric-two" class="metric-select effect-shadow">
                     </select>
                 </div>
             </div>
