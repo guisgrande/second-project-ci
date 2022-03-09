@@ -140,7 +140,7 @@ footer a:hover {
 }
 
 #converter-container {
-    background-image: linear-gradient(to top left, #022b3aab, rgb(216, 216, 216));
+    background-image: linear-gradient(to top right, #022b3aab, #1F7A8C, #022b3aab, rgb(216, 216, 216), #022b3aab);
     border-radius: 5px;
 }
 
@@ -148,10 +148,12 @@ footer a:hover {
     text-transform: uppercase;
     display: flex;
     justify-content: center;
+    text-shadow: 0.5px 0.5px 1px black;
 }
 
 #converter-container p {
     margin: 5px 10px 25px 10px;
+    font-weight: bold;
 }
 
 #category-selector-box {
@@ -160,10 +162,16 @@ footer a:hover {
 }
 
 #category-selector-box select {
-    width: 120px;
-    height: 25px;
+    width: 170px;
+    height: 35px;
     border-radius: 5px;
-    background-color: #E1E5F2;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#value-result {
+    color: black;
+    background-color: white;
 }
 
 .terminal {
@@ -176,12 +184,14 @@ footer a:hover {
     width: 190px;
     height: 25px;
     border-radius: 5px;
+    border: 1px solid black;
 }
 
 .terminal select {
     width: 140px;
     height: 27px;
     border-radius: 5px;
+    border: 1px solid black;
 }
 
 /* quiz-game.html style */
