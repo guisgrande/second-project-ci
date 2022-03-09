@@ -347,7 +347,7 @@ let timerDecres = setInterval (()=>{
         newQuestion();
         timerStart();
     }
-}, 1000);;
+}, 1000);
 
 function timerStart() {
     timerSeconds = 30;
@@ -358,7 +358,7 @@ function timerStart() {
 function newQuestion() {
 
     // Random number to the question, 1 to 101.
-    let randomNumb = Math.floor(Math.random() * 100 + 1)
+    let randomNumb = Math.floor(Math.random() * 100 + 1);
     randomNumb;
 
     // Random category to the question
@@ -409,8 +409,8 @@ function newQuestion() {
     questionDescription.innerHTML = `${randomNumb} ${randomMetric1} corresponds to how many ${randomMetric2}?`;
 
     // Score counter update
-    correctDisplay.innerHTML = `<p>Correct Answers: ${correctScore}</p>`
-    incorrectDisplay.innerHTML = `<p>Incorrect Answers: ${incorrectScore}</p>`
+    correctDisplay.innerHTML = `<p>Correct Answers: ${correctScore}</p>`;
+    incorrectDisplay.innerHTML = `<p>Incorrect Answers: ${incorrectScore}</p>`;
 
     // Answers generator
     inputVal = randomNumb;
@@ -454,7 +454,7 @@ function newQuestion() {
         wrongAnswer2 = wrongAnswer2 - 1;
     } else if (wrongAnswer1 === wrongAnswer2) {
         wrongAnswer1 = correctAnswer - 1;
-    };
+    }
 
     // To randomly choose the answer option for the correct answer, every question change the position of the correct answer.
     let randomQuestion = [correctAnswer, wrongAnswer1, wrongAnswer2];
@@ -477,13 +477,13 @@ function newQuestion() {
 
     // Check the rules - 8 wrong answer and 15 question total.
     if (incorrectScore >= 8) {
-        alert("Ops, you lose! You scored 8 incorrect answers. Try again!")
+        alert("Ops, you lose! You scored 8 incorrect answers. Try again!");
         stopReport();
     } else if (questionNumb >= 15) {
-        alert("End game! Check your results!")
+        alert("End game! Check your results!");
         stopReport();
     } else {
-        console.log("Question Nº" + (questionNumb + 1))
+        console.log("Question Nº" + (questionNumb + 1));
     }
 }
 
@@ -558,12 +558,6 @@ document.getElementById('stop-report').addEventListener('click', stopReport);
 
 answeredA.onclick = () => {
 
-    console.log("Correct is " + result);
-    console.log("VALUE is" + answerA.value);
-    console.log("ELEMENT P is " + answerA.innerText);
-    console.log("Answered DIV is " + answeredA);
-    console.log("Answered value is " + answeredA.value);
-
     if (answerA.innerText == result) {
         correctScore += 1;
         newQuestion();
@@ -573,14 +567,10 @@ answeredA.onclick = () => {
         newQuestion();
         timerStart();
     }
-
-    console.log("A = " + answerA.value)
     
 }
 
 answeredB.onclick = () => {
-
-    console.log("Correct is " + result)
 
     if (answerB.innerText == result) {
         correctScore += 1;
@@ -592,13 +582,9 @@ answeredB.onclick = () => {
         timerStart();
     }
 
-    console.log("B = " + answerB.value)
-
 }
 
 answeredC.onclick = () => {
-
-    console.log("Correct is " + result)
 
     if (answerC.innerText == result) {
         correctScore += 1;
@@ -609,7 +595,5 @@ answeredC.onclick = () => {
         newQuestion();
         timerStart();
     }
-    
-    console.log("C = " + answerC.value)
 
 }
