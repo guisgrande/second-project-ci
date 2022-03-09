@@ -12,6 +12,18 @@ let time = ['Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months', 'Years'];
 let scale = ['Centimetres', 'Meters', 'Kilometers', 'Miles', 'Inches', 'Foot', 'Yards'];
 let weight = ['Tonne', 'Kilos', 'Grams', 'Milligrams', 'Ounce', 'Pounds'];
 
+// Global variables to converter.html page
+let valueIn = document.getElementById('value-base');
+let valueOut = document.getElementById('value-result');
+let convertCategory = document.getElementById('categories');
+let convertMetric1 = document.getElementById('metric-one');
+let convertMetric2 = document.getElementById('metric-two');
+let convertMetricValue1, convertMetricValue2, convertCategoryValue;
+
+convertMetricValue1 = convertMetric1.value;
+convertMetricValue2 = convertMetric2.value;
+convertCategoryValue = convertCategory.value;
+
 // Metrics functions for each category, using if/else to verify the metrics.
 
 // Speed base convertion
@@ -311,23 +323,11 @@ if (metric1 === 'Tonne' && metric2 === 'Kilos') {
     valueOut.value = Number(inputVal * 16);
 } else {
     valueOut.value = Number(inputVal * 1);
-    console.log("ERROR")
+    console.log("ERROR");
 }
 }
 
 // converter.html functions
-
-// Global variables to converter.html page
-let valueIn = document.getElementById('value-base');
-let valueOut = document.getElementById('value-result');
-let convertCategory = document.getElementById('categories');
-let convertMetric1 = document.getElementById('metric-one');
-let convertMetric2 = document.getElementById('metric-two');
-let convertMetricValue1, convertMetricValue2, convertCategoryValue;
-
-convertMetricValue1 = convertMetric1.value;
-convertMetricValue2 = convertMetric2.value;
-convertCategoryValue = convertCategory.value;
 
 /**
  * Change the options following the category selector. 
@@ -398,7 +398,7 @@ function convertFunction() {
         weightConvert(inputVal);
     } else {
         alert("ERROR");
-    };
+    }
 
 }
 
