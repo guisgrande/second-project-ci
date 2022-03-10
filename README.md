@@ -1,5 +1,11 @@
 # Metric Response
 
+Metrics Response is a page intended to be a unit conversion tool and with a proposal to put the logical reasoning of the users into practice with the quiz-game.
+
+It was designed to be simple but functional, with the objective of meeting the need to convert measurements for professional or personal use.
+
+- Here is the link to the final project > [Poker Coder](https://guisgrande.github.io/second-project-ci/)
+
 ## Contents
 
 ## UX/UI Design
@@ -8,23 +14,57 @@
 
 #### Site owner goals
 
+- The website was created to provide a tool for conversions.
+- The website was created to give the user the option to test his knowledge and reasoning.
+- The website was created to attract people who need to convert frequently.
+- The website should be simple to navigate and easy to read.
+
 #### User stories
+
+- As a user, I want to understand the purpose of the website, so I can know if it's of interest to me.
+- As a user, I want to easily navigate the site, so I don't lose enthusiasm for using the site.
+- As a user, I want to be able to use the tool, so I fulfill the objective that brought me to the site.
+- As a user, I want to be able to select more than one conversion option, so I I can fulfill my need.
+- As a user, I want to be able to test my knowledge, so I can chalenge my self.
+- As a user, I want to have access to all the links, so I can connect if it interests me.
 
 ### Scope
 
+- For the Metrics Response I have planned the following features.
+    - Use of a clean design, to keep the website simple.
+    - Use coherent Java Sricp for the site to be as correct and accurate as possible.
+    - Use technologies and tools that improve site development and performance.
+ 
 ### Structure
+
+- For the Metrics Response website I planned to separate the site into three pages. 
+    - The home page, which will be the landing page of the website, containing only the icons directing to the site's functionalities .
+    - The convert page, will contain a field to select the categories, two other fields to select the metrics that will be compared, and inputs for the desired value and another for the answer. It will also contain a button to invert the metrics and another to clear the values.
+    - The quiz-game page, will have two buttons for action (play and stop), two fields to count the correct and incorrect points, a timer, a frame to show the question, the rules, and finally the answer options.
 
 ### Skeleton
 
 #### Wireframes
 
+- The wireframe was created using the Figma tool. The initial idea of comfort image was maintained during the creation of the code, with some adjustments in the layout to visually adapt the page.
+
 ### Surface
 
 #### Colour scheme
 
+- The colors chosen for the composition of the site were a combination of 6 colors (white, black, and 4 shades of blue), white or black used for texts and icons, white for the background, and shades of blue to details and gradient of containers. 
+- For the quiz-game page I opted to change the background colors to a brighter color. I chose three different shades of yellow to contrast with the quiz elements. 
+- Here is an image of the color palette used on the website (source: Coolors.io).
+
 #### Typography
 
+- The font was selected from Google Fonts.
+  - The font selected was Inter (Extra-light 200).
+  - For the whole website I chose the same font, just using bold or text-shadow to to give more emphasis.
+
 #### Imagery
+
+- For this project and its proposal, the use of images or other media would not be appropriate. I chose to use only icons to increase the visual aspect.
 
 ## Features
 
@@ -72,9 +112,30 @@
 
 ### Deployment
 
+- To deploy the site to Github pages follow this steps:
+1. In the GitHub repository, select the Settings options.
+2. Scroll down until you find "GitHub Pages" section.
+3. Select the option "Check it out here", will gona send you to the next page.
+4. Choose "Main" for the branch in the drop down box.
+5. Choose "Root" for the directory in the next drop down box.
+6. Then click "Save".
+
 ### Fork
 
+- Forks let you make changes to a project without affecting the original repository. Follow this steps:
+1. Go to the repository page, can be accessed [here](https://github.com/guisgrande/second-project-ci).
+2. On top right, you select the Fork option and proceed.
+3. A duplicate will be created inside your repository.
+
 ### Clone
+
+- Clone let you create an identical repository to the original. Follow this steps:
+1. Go to the repository page, can be accessed [here](https://github.com/guisgrande/second-project-ci).
+2. Click on code drop down menu.
+3. Choose if you want to clone using HTTPS, SSH or GitHub CLI. Then select de copy button.
+4. Open your Git Bash in your IDE.
+5. Type git clone and then paste the URL you copied before.
+6. Press Enter to create your clone.
 
 ## Technologies and tools
 
@@ -82,13 +143,29 @@
 - [Gitpod](https://www.gitpod.io/) - to create/edit the code of the project.
 - [Github](https://github.com/) - to create repository, hosting files and deployment of the website.
 - [Font Awesome](https://fontawesome.com/) - Used for the icons used in the footer.
+- [Figma](https://figma.com/) - Used to creat the wireframes.
+- [Google Fonts](https://fonts.google.com/) - Used for font selection.
+- [Coolors](https://coolors.co/) - Used to choice of colors and for the palette used in the README.
+- [Favicon.io](https://favicon.io/) - Used to implement the favicon on the website.
+- [WAVE](https://wave.webaim.org/) - Used to acecessibility test.
+- Lighthouse (Chrome Devtools) - Used to performance test.
 
 ## Credits
 
 ### Content
 
+- The formulas used in the conversions were taken from [Google](http://google.com/).
+
 ### Media
+
+- The image used for README.md responsive mockup was taken from [Am I Responsive](http://ami.responsivedesign.is/).
+- The icons images used for buttons was taken from [Canva](https://www.canva.com/)
 
 ### Inspiration
 
 ## Acknowledgements
+
+- Code Institute for all the support and the team always ready to help.
+- My mentor [Ben Kavanagh](https://github.com/BAK2K3) for all the instructions, advice and knowledge that helped me to improve the project.
+- My parents, my wife and my friends for motivating me to achieve my best.
+- Everyone in the Slack community for tips and opinions. 
