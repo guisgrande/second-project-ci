@@ -260,7 +260,7 @@ footer a:hover {
 .score {
     margin: 5px;
     padding: 2px;
-    width: 140px;
+    width: 160px;
     height: 25px;
     border-radius: 5px;
     border: 1px solid black;
@@ -279,11 +279,11 @@ footer a:hover {
     width: 75px;
     height: 75px;
     background-color: #022B3A;
-    color: white;
     border-radius: 5px;
     border: 1px solid black;
     display: flex;
     align-items: center;
+    color: white;
 }
 
 #timer p {
@@ -457,8 +457,8 @@ footer a:hover {
         font-size: 70px;
     }
     
-    .selection-options p {
-        font-size: 13px;
+    .selection-options h2 {
+        font-size: 12px;
     }
 
     /* queries to converter.html */
