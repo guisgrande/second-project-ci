@@ -105,6 +105,8 @@ It was designed to be simple but functional, with the objective of meeting the n
 1. Home page - [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguisgrande.github.io%2Fsecond-project-ci%2Findex.html).
 2. Convert page - [converter.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguisgrande.github.io%2Fsecond-project-ci%2Fconverter.html).
 3. Quiz-game page - [quiz-game.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguisgrande.github.io%2Fsecond-project-ci%2Fquiz-game.html).
+
+</details>
  
 - __CSS__
     - No errors were found when passing through the official W3C Jigsaw Validator. [Validated](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fguisgrande.github.io%2Fsecond-project-ci%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
