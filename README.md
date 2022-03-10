@@ -1,10 +1,10 @@
-# Metric Response
+# Metrics Response
 
 Metrics Response is a page intended to be a unit conversion tool and with a proposal to put the logical reasoning of the users into practice with the quiz-game.
 
 It was designed to be simple but functional, with the objective of meeting the need to convert measurements for professional or personal use.
 
-- Here is the link to the final project > [Poker Coder](https://guisgrande.github.io/second-project-ci/)
+- Here is the link to the final project > [Metrics Response](https://guisgrande.github.io/second-project-ci/)
 
 ## Contents
 
@@ -72,17 +72,45 @@ It was designed to be simple but functional, with the objective of meeting the n
 
 ### Features Left to Implement
 
+- To be implemented in the quiz-game difficulty options between easy, medium and hard.
+- Improve the design of the quiz-game to make it more attractive and fun, like adding animations.
+- In the future, expand the options of categories and metrics to offer more options to users.
+
 ## Testing
 
+- I ran the tests on multiple devices and different browsers, in order to cover the widest possible range of screen sizes and models. 
+
 ### Navegation and Devices
+
+- __Browsers__
+  - Chrome
+  - Firefox
+  - Safari
+  - Edge
+
+- __Devices__
+  - Apple: Iphone SE, Iphone 13 Pro Max, Iphone 8, Iphone XR, Iphone 12 Pro, Ipad Air, Ipad Mini.
+  - Samsung: Galaxy S8+, Galaxy S20 Ultra, Galaxy A51/71, Galaxy Tab S4, Galaxy Note II.
+  - Motorola: Moto G4.
+  - LG: Optimus L70, Nexus 4, Nexus 5, Nexus 10.
+  - Google: Pixel 2, Pixel 5, Pixel 3 XL.
 
 ### Validator Testing 
 
 - __HTML__
+    - No errors were returned when passing through the official W3C Validator. [Validated](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguisgrande.github.io%2Fsecond-project-ci%2F)
+<details>
+    <summary>All html pages validated</summary>
+ 
+1. Home page - [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguisgrande.github.io%2Fsecond-project-ci%2Findex.html).
+2. Convert page - [converter.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguisgrande.github.io%2Fsecond-project-ci%2Fconverter.html).
+3. Quiz-game page - [quiz-game.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguisgrande.github.io%2Fsecond-project-ci%2Fquiz-game.html).
  
 - __CSS__
+    - No errors were found when passing through the official W3C Jigsaw Validator. [Validated](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fguisgrande.github.io%2Fsecond-project-ci%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 - __JavaScript__
+    - No errors or relevant issues were found when passing through the official validator [JShint](https://jshint.com/).
 
 ### Performance Testing
 
@@ -91,15 +119,33 @@ It was designed to be simple but functional, with the objective of meeting the n
 ### Other Tests
 
 - __Acessibility__
-
+        - To check accessibility, I did the test using WAVE from WebAIM. The site didn't present any relevant errors or alerts. [Report](https://wave.webaim.org/report#/https://guisgrande.github.io/second-project-ci/index.html).
 ### User Story Testing
 
 - __User Story__
 
+    - User Story 1: As a user, I want to understand the purpose of the website, so I can know if it's of interest to me.
+    - Outcome: 
+    
+    - User Story 2: As a user, I want to easily navigate the site, so I don't lose enthusiasm for using the site.
+    - Outcome:
+    
+    - User Story 3: As a user, I want to be able to use the tool, so I fulfill the objective that brought me to the site.
+    - Outcome:
+    
+    - User Story 4: As a user, I want to be able to select more than one conversion option, so I I can fulfill my need.
+    - Outcome:
+    
+    - User Story 5: As a user, I want to be able to test my knowledge, so I can chalenge my self.
+    - Outcome:
+    
+    - User Story 6: As a user, I want to have access to all the links, so I can connect if it interests me.
+    - Outcome: 
+    
 ### Fixed Bugs
 
 ### Unfixed Bugs
-
+    
 ## Deployment
 
 - To create this project I used GitHub and GitPod.
@@ -149,6 +195,9 @@ It was designed to be simple but functional, with the objective of meeting the n
 - [Favicon.io](https://favicon.io/) - Used to implement the favicon on the website.
 - [WAVE](https://wave.webaim.org/) - Used to acecessibility test.
 - Lighthouse (Chrome Devtools) - Used to performance test.
+- [JShint](https://jshint.com/) - Used to test Java Script code.
+- [Jigsaw](https://jigsaw.w3.org/css-validator/) - Used to test CSS code.
+- [Validator](https://validator.w3.org/) - Used to test HTML code.
 
 ## Credits
 
@@ -162,6 +211,10 @@ It was designed to be simple but functional, with the objective of meeting the n
 - The icons images used for buttons was taken from [Canva](https://www.canva.com/)
 
 ### Inspiration
+    
+- Instructions provided in the Youtube video helped me to develop the timer used in the quiz-game. Chanel: WEB CIFAR. [Video](https://www.youtube.com/watch?v=_a4XCarxwr8).
+- Instructions provided in the Youtube video helped me to develop the selector used in the converter. Chanel: Decoding code. [Video](https://www.youtube.com/watch?v=HMNXXCpGx7w).
+- Instructions provided in the following website helped me to develop the converter aplications. [Website](https://insidethediv.com/unit-converter-Javascript).
 
 ## Acknowledgements
 
