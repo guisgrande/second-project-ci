@@ -527,11 +527,10 @@ document.getElementById('start-restart').addEventListener('click', startRestart)
 function stopReport() {
     timerSeconds = '--';
 
-    if (questionNumb == 15) {
+    if (questionNumb == 15 || questionNumb == 0) {
     questionCounter.innerHTML = `Total answered was ${questionNumb} of 15 questions | END GAME`;
     } else {
-    questionNumb -= 1;
-    questionCounter.innerHTML = `Total answered was ${questionNumb} of 15 questions | END GAME`;   
+    questionCounter.innerHTML = `Total answered was ${questionNumb - 1} of 15 questions | END GAME`;   
     }
 
     questionDescription.innerHTML = `Congratulations! Well done, check your results`;
@@ -560,12 +559,12 @@ answeredA.onclick = () => {
 
     if (answerA.innerText == result) {
         correctScore += 1;
-        newQuestion();
         timerStart();
+        newQuestion();
     } else {
         incorrectScore += 1;
-        newQuestion();
         timerStart();
+        newQuestion();
     }
     
 }
@@ -574,12 +573,12 @@ answeredB.onclick = () => {
 
     if (answerB.innerText == result) {
         correctScore += 1;
-        newQuestion();
         timerStart();
+        newQuestion();
     } else {
         incorrectScore += 1;
-        newQuestion();
         timerStart();
+        newQuestion();
     }
 
 }
@@ -588,12 +587,12 @@ answeredC.onclick = () => {
 
     if (answerC.innerText == result) {
         correctScore += 1;
-        newQuestion();
         timerStart();
+        newQuestion();
     } else {
         incorrectScore += 1;
-        newQuestion();
         timerStart();
+        newQuestion();
     }
 
 }
