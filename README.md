@@ -6,7 +6,9 @@ It was designed to be simple but functional, with the objective of meeting the n
 
 - Here is the link to the final project > [Metrics Response](https://guisgrande.github.io/second-project-ci/)
 
+<div align="center">
 <img src="assets/readme-images/responsive-screens.PNG">
+</div>
 
 ## Contents
 
@@ -19,6 +21,7 @@ It was designed to be simple but functional, with the objective of meeting the n
      * [Structure](#structure).
      * [Skeleton](#skeleton).
        * [Wireframes](#wireframes).
+       * [Flowchart](#flowchart).
      * [Surface](#surface).
        * [Colour scheme](#colour-scheme).
        * [Typography](#typography).
@@ -119,13 +122,28 @@ It was designed to be simple but functional, with the objective of meeting the n
 </div>
 </details>
 
+### Flowchart
+
+- The flowchart was elaborated to guide the development of the quiz-game logic. Being pointed the possible ways for the user action and how to behave before the established rules.
+
+<details?
+<div align="center">
+<img src="assets/readme-images/flowchart.PNG">
+</div>
+</details>
+
 ### Surface
 
 #### Colour scheme
 
 - The colors chosen for the composition of the site were a combination of 6 colors (white, black, and 4 shades of blue), white or black used for texts and icons, white for the background, and shades of blue to details and gradient of containers. 
 - For the quiz-game page I opted to change the background colors to a brighter color. I chose three different shades of yellow to contrast with the quiz elements. 
-- Here is an image of the color palette used on the website (source: Coolors.io).
+- Here is an image of the color palette used on the website and the shades of yellow used on quiz page (source: Coolors.io).
+
+<div align="center">
+<img src="assets/readme-images/palet.PNG">
+<img src="assets/readme-images/palet2.PNG">    
+</div>
 
 #### Typography
 
@@ -140,6 +158,51 @@ It was designed to be simple but functional, with the objective of meeting the n
 ## Features
 
 ### Existing Features
+
+- __Title__
+
+<div align="center">
+<img src="assets/readme-images/title.PNG">    
+</div>
+
+- __Navbar__
+
+<div align="center">
+<img src="assets/readme-images/navbar.PNG">   
+<img src="assets/readme-images/navbar-hover.PNG">  
+</div>
+
+- __Footer__
+
+<div align="center">
+<img src="assets/readme-images/footer.PNG">   
+<img src="assets/readme-images/footer-hover.PNG">  
+</div>
+
+#### Home page
+
+- __Selector section__
+
+<div align="center">
+<img src="assets/readme-images/selectionbox.PNG">    
+</div>
+
+#### Converter Page
+
+- __Converter box__
+
+<div align="center">
+<img src="assets/readme-images/converter.PNG">    
+</div>
+
+#### Quiz game Page
+
+- __Quiz game box__
+
+<div align="center">
+<img src="assets/readme-images/quizgamebefore.PNG"> 
+<img src="assets/readme-images/quizgameafter.PNG">    
+</div>
 
 ### Features Left to Implement
 
@@ -188,6 +251,18 @@ It was designed to be simple but functional, with the objective of meeting the n
 ### Performance Testing
 
 - __Lighthouse DevTools__
+
+<div align="center">
+<img src="assets/readme-images/lighthouse-index.PNG">    
+</div>
+
+<div align="center">
+<img src="assets/readme-images/lighthouse-converter.PNG">    
+</div>
+
+<div align="center">
+<img src="assets/readme-images/lighthouse-quizgame.PNG">    
+</div>
 
 ### Other Tests
 
