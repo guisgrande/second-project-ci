@@ -306,6 +306,18 @@ It was designed to be simple but functional, with the objective of meeting the n
     
 ### Fixed Bugs
 
+- Convert page - the result input was offset and not appearing where it should. Because I had named the element with the same ID as another element on the quiz page I was applying CSS style to it. By changing the ID the problem was solved.
+    - Changes to fix bugs can be seen here. [Commit](https://github.com/guisgrande/second-project-ci/commit/fd24d50d1e5ec13ed9ad360d955daff88bad0ac8).
+
+- Convert page - the formulas for converting the measurements were not being applied, because the input was type="text" I needed to include the Number() assignment in the conversion functions so that it would be read as a number. I changed some variables to improve the code. 
+    - Changes to fix bugs can be seen here. [Commit](https://github.com/guisgrande/second-project-ci/commit/a74b96d40d18a81e7005fd774cbff42e57329146).
+
+- Convert page - I had programmed it to exchange the values along with the metrics, but it wasn't working with the values executing the exchange only once and then stopping, I removed the exchange of values and kept the metrics which made the execution more efficient. I had to add the function to execute the conversion again.
+    - Changes to fix bugs can be seen here. [Commit](https://github.com/guisgrande/second-project-ci/commit/de7bbda1b1ccfa91adb377ebbf8f059990e00a22).
+
+- Quiz game page - I was having problems with the function to check the answers, when the user clicked on one of the options the code couldn't read the answer value and compare it with the correct result. After doing the tests with the console, I removed the code that was interfering by using .toFixed attribute in the answers and changed the reading of the answer from .value to .innerText, after these modifications the code works correctly.
+    - Changes to fix bugs can be seen here. [Commit](https://github.com/guisgrande/second-project-ci/commit/a45d6c13dde4fb1c7120ff35d20f6a676ecdb8f8).
+
 ### Unfixed Bugs
     
 - So far, the only bug identified to be fixed is on the quiz game page. The timer before the game starts appears as "Timer: NaN" due to the programming used for it in the Java Script file. 
