@@ -76,7 +76,6 @@ It was designed to be simple but functional, with the objective of meeting the n
 - As a user, I want to understand the purpose of the website, so I can know if it's of interest to me.
 - As a user, I want to easily navigate the site, so I don't lose enthusiasm for using the site.
 - As a user, I want to be able to use the tool, so I fulfill the objective that brought me to the site.
-- As a user, I want to be able to select more than one conversion option, so I I can fulfill my need.
 - As a user, I want to be able to test my knowledge, so I can chalenge my self.
 - As a user, I want to have access to all the links, so I can connect if it interests me.
 
@@ -126,7 +125,7 @@ It was designed to be simple but functional, with the objective of meeting the n
 
 - The flowchart was elaborated to guide the development of the quiz-game logic. Being pointed the possible ways for the user action and how to behave before the established rules.
 
-<details?
+<details>
 <div align="center">
 <img src="assets/readme-images/flowchart.PNG">
 </div>
@@ -161,11 +160,15 @@ It was designed to be simple but functional, with the objective of meeting the n
 
 - __Title__
 
+- As a header, I chose to keep only the title centered with a shadow effect. It is present without changes on all pages. I opted for the basics, without using images or background.
+
 <div align="center">
 <img src="assets/readme-images/title.PNG">    
 </div>
 
 - __Navbar__
+
+- Also present on the three pages of the website, the navbar serves to guide and facilitate the user's navigation through the pages. I followed the effect of the title and applied the hover for the user to know which will be his destination.
 
 <div align="center">
 <img src="assets/readme-images/navbar.PNG">   
@@ -173,6 +176,8 @@ It was designed to be simple but functional, with the objective of meeting the n
 </div>
 
 - __Footer__
+
+- At the bottom of the page, the footer has icons for social networks, making it easier for the user to connect with the community and our site. Applied the hover effect to also discriminate what the destination will be. All options open in a new tab.
 
 <div align="center">
 <img src="assets/readme-images/footer.PNG">   
@@ -183,6 +188,8 @@ It was designed to be simple but functional, with the objective of meeting the n
 
 - __Selector section__
 
+- On the start page there are options for the user, the conversion tool or the quiz game. I used icons and text to make it more user-friendly. I applied an animation to the background to attract the attention.
+
 <div align="center">
 <img src="assets/readme-images/selectionbox.PNG">    
 </div>
@@ -191,6 +198,10 @@ It was designed to be simple but functional, with the objective of meeting the n
 
 - __Converter box__
 
+- The converter page has a short explanatory text, the box for selecting the category to be converted (5 different ones so far), the input for the desired value and the boxes for selecting the metrics to be converted. In the center there are two buttons, one to invert the metrics and another to clear the values.
+
+- Designed with the intention of being intuitive and practical to use.
+
 <div align="center">
 <img src="assets/readme-images/converter.PNG">    
 </div>
@@ -198,6 +209,12 @@ It was designed to be simple but functional, with the objective of meeting the n
 #### Quiz game Page
 
 - __Quiz game box__
+
+- The quiz game was introduced for users to test their reasoning and practice their knowledge. Two buttons are present on the page, one to start the game and another to stop. Next are the score displays (correct and incorrect) and the timer. The display board shows the question number, category and the randomly generated question.
+
+- The rules are displayed until the moment the game starts, and are then replaced by the possible answers (3 in total and one correct).
+
+- From that moment until the end of 15 questions the timer starts at 30 seconds and the user has this time to answer, otherwise he loses a point (if he gets 8 wrong, he loses the game).
 
 <div align="center">
 <img src="assets/readme-images/quizgamebefore.PNG"> 
@@ -273,26 +290,25 @@ It was designed to be simple but functional, with the objective of meeting the n
 - __User Story__
 
     - User Story 1: As a user, I want to understand the purpose of the website, so I can know if it's of interest to me.
-    - Outcome: 
+    - Outcome: When the user first visits the webpage, it is possible to understand what options the website offers. __Passed__.
     
     - User Story 2: As a user, I want to easily navigate the site, so I don't lose enthusiasm for using the site.
-    - Outcome:
+    - Outcome: When the user visits the website, there is a navigation bar with a clear description of each page, and the titles of each page are explanatory. __Passed__.
     
     - User Story 3: As a user, I want to be able to use the tool, so I fulfill the objective that brought me to the site.
-    - Outcome:
+    - Outcome: When the user visits the website, there is a converter tool functional that covers a significant choice of categories and metrics. __Passed__.
     
-    - User Story 4: As a user, I want to be able to select more than one conversion option, so I I can fulfill my need.
-    - Outcome:
+    - User Story 4: As a user, I want to be able to test my knowledge, so I can chalenge my self.
+    - Outcome: When the user visits the website, there is a quiz game page that asks questions and challenges the user to think fast to answer. __Passed__.
     
-    - User Story 5: As a user, I want to be able to test my knowledge, so I can chalenge my self.
-    - Outcome:
-    
-    - User Story 6: As a user, I want to have access to all the links, so I can connect if it interests me.
-    - Outcome: 
+    - User Story 5: As a user, I want to have access to all the links, so I can connect if it interests me.
+    - Outcome: When the user visit the webpage, all the links in the footer are working correctly to connect to the social networks. __Passed__.
     
 ### Fixed Bugs
 
 ### Unfixed Bugs
+    
+- So far, the only bug identified to be fixed is on the quiz game page. The timer before the game starts appears as "Timer: NaN" due to the programming used for it in the Java Script file. 
     
 ## Deployment
 
