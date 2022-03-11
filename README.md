@@ -6,7 +6,56 @@ It was designed to be simple but functional, with the objective of meeting the n
 
 - Here is the link to the final project > [Metrics Response](https://guisgrande.github.io/second-project-ci/)
 
+<img src="assets/readme-images/responsive-screens.PNG">
+
 ## Contents
+
+<details>
+    <summary>Summary</summary>
+
+- [UX/UI Design](#uxui-design).
+     * [Strategy](#strategy).
+     * [Scope](#scope).
+     * [Structure](#structure).
+     * [Skeleton](#skeleton).
+       * [Wireframes](#wireframes).
+     * [Surface](#surface).
+       * [Colour scheme](#colour-scheme).
+       * [Typography](#typography).
+       * [Imagery](#imagery).
+   
+- [Features](#features).
+   * [Existing Features](#existing-features).
+     * [Home page](#home-page).
+     * [Converter page](#converter-page).
+     * [Quiz game page](#quiz-game-page).
+   * [Features Left to Implement](#features-left-to-implement).
+ 
+- [Testing](#testing).
+   * [Navegation and Devices](#navegation-and-devices).
+   * [Validator Testing](#validator-testing).
+   * [Performance Testing](#performance-testing).
+   * [Other Tests](#other-tests).
+   * [User Story Testing](#user-story-testing).
+   * [Fixed Bugs](#fixed-bugs).
+   * [Unfixed Bugs](#unfixed-bugs).
+ 
+- [Deployment](#deployment).
+   * [Deployment](#deployment).
+   * [Fork](#fork).
+   * [Clone](#clone).
+  
+- [Technologies and tools](#technologies-and-tools).
+
+- [Credits](#credits). 
+   * [Content](#content).
+   * [Media](#media)
+   * [Inspiration](#inspiration).
+ 
+- [Acknowledgements](#acknowledgements).
+ 
+</details> 
+
 
 ## UX/UI Design
 
@@ -47,6 +96,28 @@ It was designed to be simple but functional, with the objective of meeting the n
 #### Wireframes
 
 - The wireframe was created using the Figma tool. The initial idea of comfort image was maintained during the creation of the code, with some adjustments in the layout to visually adapt the page.
+
+<details><summary>Home Page Wireframe</summary>
+<div align="center">
+<img src="assets/readme-images/wireframe-home.PNG">
+</div>
+</details>
+
+<details><summary>Converter Page Wireframe</summary>
+<div align="center">
+<img src="assets/readme-images/wireframe-converter.PNG">
+</div>
+</details>
+
+<details><summary>Quiz Game Page Wireframe</summary>
+<div align="center">
+<img src="assets/readme-images/wireframe-quiz.PNG">
+</div>
+
+<div align="center">
+<img src="assets/readme-images/wireframe-quiz2.PNG">
+</div>
+</details>
 
 ### Surface
 
