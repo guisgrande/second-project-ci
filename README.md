@@ -52,7 +52,7 @@ It was designed to be simple but functional, with the objective of meeting the n
 
 - [Credits](#credits). 
    * [Content](#content).
-   * [Media](#media)
+   * [Media](#media).
    * [Inspiration](#inspiration).
  
 - [Acknowledgements](#acknowledgements).
@@ -378,6 +378,7 @@ It was designed to be simple but functional, with the objective of meeting the n
 - [Figma](https://figma.com/) - Used to creat the wireframes.
 - [Google Fonts](https://fonts.google.com/) - Used for font selection.
 - [Coolors](https://coolors.co/) - Used to choice of colors and for the palette used in the README.
+- [Ludichart](https://www.lucidchart.com/) - Used to create the flowchart.
 - [Favicon.io](https://favicon.io/) - Used to implement the favicon on the website.
 - [WAVE](https://wave.webaim.org/) - Used to acecessibility test.
 - Lighthouse (Chrome Devtools) - Used to performance test.
