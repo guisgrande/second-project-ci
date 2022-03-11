@@ -527,13 +527,16 @@ document.getElementById('start-restart').addEventListener('click', startRestart)
 function stopReport() {
     timerSeconds = '--';
 
-    if (questionNumb == 15 || questionNumb == 0) {
-    questionCounter.innerHTML = `Total answered was ${questionNumb} of 15 questions | END GAME`;
+    if (questionNumb == 0) {
+        questionCounter.innerHTML = `Total answered was ${questionNumb} of 15 questions | END GAME`;
+        questionDescription.innerHTML = `You didn't play! Press start to try.`;
+    } else if (questionNumb == 15)  {
+        questionCounter.innerHTML = `Total answered was ${questionNumb} of 15 questions | END GAME`;
+        questionDescription.innerHTML = `Congratulations, answered all the questions! Well done, check your results`;
     } else {
-    questionCounter.innerHTML = `Total answered was ${questionNumb - 1} of 15 questions | END GAME`;   
+        questionCounter.innerHTML = `Total answered was ${questionNumb - 1} of 15 questions | END GAME`;
+        questionDescription.innerHTML = `Good game! Now check your results`;   
     }
-
-    questionDescription.innerHTML = `Congratulations! Well done, check your results`;
 
     letterA.setAttribute('hidden', 'hidden');
     letterB.setAttribute('hidden', 'hidden');
