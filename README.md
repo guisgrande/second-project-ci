@@ -125,9 +125,9 @@ It was designed to be simple but functional, with the objective of meeting the n
 
 - The flowchart was elaborated to guide the development of the quiz-game logic. Being pointed the possible ways for the user action and how to behave before the established rules.
 
-<details>
+<details><summary>Flowchart</summary>
 <div align="center">
-<img src="assets/readme-images/flowchart.PNG">
+<img src="assets/readme-images/flowchart.PNG"  width="600">
 </div>
 </details>
 
@@ -140,8 +140,11 @@ It was designed to be simple but functional, with the objective of meeting the n
 - Here is an image of the color palette used on the website and the shades of yellow used on quiz page (source: Coolors.io).
 
 <div align="center">
-<img src="assets/readme-images/palet.PNG">
-<img src="assets/readme-images/palet2.PNG">    
+<img src="assets/readme-images/palet.PNG" width="750">
+</div>
+
+<div align="center">
+<img src="assets/readme-images/palet2.PNG" width="450">    
 </div>
 
 #### Typography
@@ -269,14 +272,20 @@ It was designed to be simple but functional, with the objective of meeting the n
 
 - __Lighthouse DevTools__
 
+    - Home page performance.
+
 <div align="center">
 <img src="assets/readme-images/lighthouse-index.PNG">    
 </div>
 
+    - Converter page performance.
+    
 <div align="center">
 <img src="assets/readme-images/lighthouse-converter.PNG">    
 </div>
 
+    - Quiz game page performance.
+    
 <div align="center">
 <img src="assets/readme-images/lighthouse-quizgame.PNG">    
 </div>
@@ -361,6 +370,7 @@ It was designed to be simple but functional, with the objective of meeting the n
 
 ## Technologies and tools
 
+- Programming languages used: Java Script, HTML and CSS.
 - DevTools - to assist in the development of the project.
 - [Gitpod](https://www.gitpod.io/) - to create/edit the code of the project.
 - [Github](https://github.com/) - to create repository, hosting files and deployment of the website.
